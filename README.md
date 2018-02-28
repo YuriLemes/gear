@@ -1,3 +1,9 @@
-# Gear
-  Projeto a ser desenvolvido para o Curso de Ciências da Computação. 
-  Tecnologias a serem utilizadas: HTML, CSS, MySQL e PHP.
+ Gear
+ ================
+  Projeto a ser desenvolvido para o Curso de Ciências da Computação.  
+  Este projeto visa o desenvolvimento de um sistema para gerência de oficinas utilizando as seguintes tecnologias:  
+  
+  * HTML
+  * CSS
+  * MySQL
+  * PHP
