@@ -8,13 +8,26 @@ $app = new \Slim\App([ 'settings' => ['displayErrorDetails' => true] ]);
   
 // página inicial
 // listagem de usuários
-$app->get('/', function ()
+/*$app->get('/', function ()
 {
     $UsersController = new \App\Controllers\UsersController;
     $UsersController->index();
+});*/
+ 
+$app->get('/', function () {
+    $UsuariosController = new \App\Controllers\UsuariosController;
+    $UsuariosController->index();
 });
- 
- 
+
+$app->post('/login', function (){
+    $UsuariosController = new \App\Controllers\UsuariosController;
+    $UsuariosController->logar();
+});
+
+$app->any('/gear', function (){
+    echo "MOSTRAR TELA PRICIPAL";
+});
+
 // adição de usuário
 // exibe o formulário de cadastro
 $app->get('/add', function ()
