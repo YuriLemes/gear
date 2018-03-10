@@ -15,7 +15,7 @@ date_default_timezone_set('America/Sao_Paulo');
 */
 function getConfig( $configName )
 {
-    $configFile = 'config.ini';
+    $configFile = 'App/config.ini';
  
     $config = parse_ini_file( $configFile, true );
  

@@ -30,10 +30,10 @@ input[type=password] {
     border: none;
     border-radius: 4px;
     color: white;
-    background-color: #1565C0;
-    border-bottom: #0D47A1 solid;
+    background-color: #0D541D;
+    border-bottom: rgba(11, 75, 29, 0.87) solid;
 }
 
 .btn-login:hover, .btn-login:focus {
-    background-color: #1976D2;
+    background-color: #0d7628;
 }

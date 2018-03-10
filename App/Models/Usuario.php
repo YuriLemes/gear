@@ -1,7 +1,8 @@
 <?php 
 
 namespace App\Models; 
-use App\DB; 
+use App\DB;
+use App\Exception\ValidacaoException;
 
 class Usuario {
 
@@ -9,6 +10,7 @@ class Usuario {
      * @param $login
      * @param $senha
      * @return bool
+     * @throws ValidacaoException
      */
     public static function logar($login, $senha) {
         
@@ -22,17 +24,14 @@ class Usuario {
         $stmt->execute();
         $usuarios = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
-        if(count($usuarios) <= 0){
-            echo "Usuário e/ou senha inválidos";
-            return false;
-        }
+        if(count($usuarios) <= 0)
+            throw new ValidacaoException("Usuário e/ou senha inválidos");
+
 
         $usuario = $usuarios[0];
 
         $_SESSION['login']['logado'] = true;
         $_SESSION['login']['usuario'] = $usuario['login'];
-
-        return true;
     }
 
     /** * Busca usuários * *

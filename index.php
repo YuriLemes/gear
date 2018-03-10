@@ -25,7 +25,7 @@ $app->post('/login', function (){
 });
 
 $app->any('/gear', function (){
-    echo "MOSTRAR TELA PRICIPAL";
+    echo "MOSTRAR TELA PRINCIPAL";
 });
 
 // adição de usuário

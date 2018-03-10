@@ -1,6 +1,7 @@
 <?php 
 
 namespace App\Controllers;
+use App\Exception\ValidacaoException;
 use \App\Models\User;
 use App\Models\Usuario;
 use \App\View;
@@ -27,21 +28,18 @@ class UsuariosController {
         $login = isset($_POST['usuario']) ? $_POST['usuario'] : '' ;
         $senha = isset($_POST['senha']) ? $_POST['senha'] : '' ;
 
-        if (empty($login)){
-            echo "Usuário não informado!";
-            exit;
-        }
+        try{
+            if (empty($login))
+                throw new ValidacaoException("Usuário não informado!");
 
-        if(empty($senha)) {
-            echo "Senha não informada!";
-            exit;
-        }
+            if(empty($senha))
+                throw new ValidacaoException("Senha não informada!");
 
-        if(Usuario::logar($login, $senha)){
-            // TODO CORRIGIR
+            Usuario::logar($login,$senha);
             header('Location: /gear');
-        }else{
-            $this->index();
+            exit;
+        }catch (ValidacaoException $e){
+            View::make('usuarios.login', array('mensagem'=>$e->getMessage()));
         }
     }
 
