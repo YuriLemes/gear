@@ -1,75 +1,27 @@
-<?php 
-// inclui o autoloader do Composer 
-require 'vendor/autoload.php'; 
-// inclui o arquivo de inicialização
-require 'init.php'; 
-// instancia o Slim, habilitando os erros (útil para debug, em desenvolvimento) 
-$app = new \Slim\App([ 'settings' => ['displayErrorDetails' => true] ]);
-  
-// página inicial
-// listagem de usuários
-/*$app->get('/', function ()
-{
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->index();
-});*/
- 
-$app->get('/', function () {
-    $UsuariosController = new \App\Controllers\UsuariosController;
-    $UsuariosController->index();
-});
 
-$app->post('/login', function (){
-    $UsuariosController = new \App\Controllers\UsuariosController;
-    $UsuariosController->logar();
-});
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <title>Gear V1.0</title>
+</head>
+<body>
+<?php
+if(array_key_exists("logou", $_GET) && $_GET['logou']=='false') {?>
+    <p class="alert alert-danger">Usuário e/ou senha inválidos!</p>
+<?php } ?>
+    <div class="login-principal">
+        <img src="img/logo.png" alt="logo sistema gear"/>
+        <hr/>
+        <div>
+            <form action="login.php" method="post" >
+                 <input class="form-control" id="usuario" type="text" name="usuario" placeholder="Usuário"/>
+                 <input class="form-control" id="senha" type="password" name="senha" placeholder="Senha"/>
+                 <input class="btn btn-primary" type="submit" value="Entrar"/>
+            </form>
+        </div>
+    </div>
 
-$app->any('/gear', function (){
-    echo "MOSTRAR TELA PRINCIPAL";
-});
-
-// adição de usuário
-// exibe o formulário de cadastro
-$app->get('/add', function ()
-{
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->create();
-});
- 
-// processa o formulário de cadastro
-$app->post('/add', function ()
-{
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->store();
-});
- 
- 
-// edição de usuário
-// exibe o formulário de edição
-$app->get('/edit/{id}', function ($request)
-{
-    // pega o ID da URL
-    $id = $request->getAttribute('id');
- 
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->edit($id);
-});
- 
-// processa o formulário de edição
-$app->post('/edit', function ()
-{
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->update();
-});
- 
-// remove um usuário
-$app->get('/remove/{id}', function ($request)
-{
-    // pega o ID da URL
-    $id = $request->getAttribute('id');
- 
-    $UsersController = new \App\Controllers\UsersController;
-    $UsersController->remove($id);
-});
- 
-$app->run();
+<?php include('footer.php')?>
