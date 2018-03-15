@@ -38,3 +38,15 @@ function getConfig( $configName )
 
     return null;
 }
+
+/**
+ * Verifica se o usuário está logado
+ */
+function estaLogado()
+{
+    if (!isset($_SESSION['login']['logado']) || $_SESSION['login']['logado'] !== true) {
+        return false;
+    }
+
+    return true;
+}

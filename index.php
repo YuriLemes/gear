@@ -1,4 +1,4 @@
-
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +9,16 @@
 </head>
 <body>
 <?php
-if(array_key_exists("logou", $_GET) && $_GET['logou']=='false') {?>
+
+    if(array_key_exists("sair", $_GET) && $_GET['sair']=='true') {
+        $_SESSION['login']['logado'] = false;
+    }
+    if(array_key_exists("logou", $_GET) && $_GET['logou']=='false') :
+?>
     <p class="alert alert-danger">Usuário e/ou senha inválidos!</p>
-<?php } ?>
+<?php
+    endif;
+?>
     <div class="login-principal">
         <img src="img/logo.png" alt="logo sistema gear"/>
         <hr/>

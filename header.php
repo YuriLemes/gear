@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    require_once('helpers.php');
+    if(!estaLogado()){
+        header('Location: index.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

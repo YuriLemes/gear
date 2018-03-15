@@ -1,28 +1,115 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Yuri Lemes
+ * Date: 15/03/2018
+ * Time: 11:41
+ */
+
 class Usuario {
 
-    static function logar($usuario, $senha) {
+    private $id;
+    private $login;
+    private $senha;
+    private $perfil;
+    private $ativo;
+    private $cnpj_oficina;
 
-        $sql = sprintf("SELECT * FROM tb_usuario WHERE login = :login AND senha = :senha");
-
-        $DB = db_connect();
-        $stmt = $DB->prepare($sql);
-        $stmt->bindParam(':login', $usuario);
-        $stmt->bindParam(':senha',$senha);
-
-        $stmt->execute();
-        $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        if(count($usuarios) <= 0)
-            return false;
-
-
-        $usuario = $usuarios[0];
-
-        $_SESSION['login']['logado'] = true;
-        $_SESSION['login']['usuario'] = $usuario['login'];
-
-        return true;
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
     }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * @param mixed $login
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSenha()
+    {
+        return $this->senha;
+    }
+
+    /**
+     * @param mixed $senha
+     */
+    public function setSenha($senha)
+    {
+        $this->senha = $senha;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPerfil()
+    {
+        return $this->perfil;
+    }
+
+    /**
+     * @param mixed $perfil
+     */
+    public function setPerfil($perfil)
+    {
+        $this->perfil = $perfil;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAtivo()
+    {
+        return $this->ativo;
+    }
+
+    /**
+     * @param mixed $ativo
+     */
+    public function setAtivo($ativo)
+    {
+        $this->ativo = $ativo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCnpjOficina()
+    {
+        return $this->cnpj_oficina;
+    }
+
+    /**
+     * @param mixed $cnpj_oficina
+     */
+    public function setCnpjOficina($cnpj_oficina)
+    {
+        $this->cnpj_oficina = $cnpj_oficina;
+    }
+
 
 }
