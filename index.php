@@ -13,9 +13,11 @@
     if(array_key_exists("sair", $_GET) && $_GET['sair']=='true') {
         $_SESSION['login']['logado'] = false;
     }
-    if(array_key_exists("logou", $_GET) && $_GET['logou']=='false') :
+    if(!empty($_SESSION['excecao']['mensagem'])) :
+        $msg = $_SESSION['excecao']['mensagem'];
+        unset($_SESSION['excecao']['mensagem']);
 ?>
-    <p class="alert alert-danger">Usuário e/ou senha inválidos!</p>
+    <p class="alert alert-danger"><?=$msg?></p>
 <?php
     endif;
 ?>

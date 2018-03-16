@@ -2,6 +2,12 @@
 class UsuarioBO {
 
     static function logar(Usuario $usuario) {
+
+        if(empty($usuario->getLogin())){
+            throw new Exception("Usuário não informado");
+        }
+
+
         $sql = sprintf("SELECT * FROM tb_usuario WHERE login = :login AND senha = :senha");
 
         $DB = db_connect();
@@ -10,18 +16,17 @@ class UsuarioBO {
         $stmt->bindParam(':senha',$usuario->getSenha());
 
         $stmt->execute();
-        $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $usuarios = $stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
 
         if(count($usuarios) <= 0)
-            return false;
+            throw new Exception("Usuário e/ou senha inválidos");
 
 
-        $usuario = $usuarios[0];
+        $user = $usuarios[0];
 
         $_SESSION['login']['logado'] = true;
-        $_SESSION['login']['usuario'] = $usuario['login'];
+        $_SESSION['login']['usuario'] = $user->getLogin();
 
-        return true;
     }
 
     static function save(Usuario $usuario) {
@@ -56,5 +61,6 @@ class UsuarioBO {
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':id', $usuario->getId());
+        $stmt->execute();
     }
 }

@@ -10,6 +10,17 @@ $senha = $_POST['senha'];
 $usuario = new Usuario();
 $usuario->setLogin($login);
 $usuario->setSenha($senha);
+
+try {
+    UsuarioBO::logar($usuario);
+    header('Location: home.php');
+} catch (Exception $exception){
+    $_SESSION['excecao']['mensagem'] = $exception->getMessage();
+    header('Location: index.php');
+}
+
+
+/*
 $logou = UsuarioBO::logar($usuario);
 
 if($logou){
@@ -18,4 +29,4 @@ if($logou){
 }else{
     // MOSTRAR AVISO "USUARIO E/OU SENHA INVÁLIDOS" NA TELA DE LOGIN
     header('Location: index.php?logou=false');
-}
+}*/
