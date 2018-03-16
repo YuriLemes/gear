@@ -14,7 +14,7 @@ include('header.php');
                 <li><a href="#">Clientes</a></li>
                 <li><a href="#">Produtos</a></li>
                 <li>
-                    <form action="index.php?sair=true" method="post">
+                    <form action="logout.php" method="post">
                         <button class="btn btn-outline-danger">Sair</button>
                     </form>
                 </li>

@@ -18,15 +18,3 @@ try {
     $_SESSION['excecao']['mensagem'] = $exception->getMessage();
     header('Location: index.php');
 }
-
-
-/*
-$logou = UsuarioBO::logar($usuario);
-
-if($logou){
-    // MOSTRAR A TELA PRINCIPAL;
-    header('Location: home.php');
-}else{
-    // MOSTRAR AVISO "USUARIO E/OU SENHA INVÁLIDOS" NA TELA DE LOGIN
-    header('Location: index.php?logou=false');
-}*/
