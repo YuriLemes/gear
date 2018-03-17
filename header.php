@@ -17,3 +17,23 @@
 	<title>Gear V1.0</title>
 </head>
 <body>
+<div class="navbar navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="home.php"><img src="img/logo.png" alt="logo sistema gear" width="110" height="50"/></a>
+        </div>
+        <div>
+            <ul class="nav">
+                <li ><a class="btn btn-success btn-home" href="usuario-lista.php">Usuários</a></li>
+                <li ><a class="btn btn-success btn-home" href="#">Clientes</a></li>
+                <li ><a class="btn btn-success btn-home" href="#">Produtos</a></li>
+                <li>
+                    <form action="logout.php" method="post">
+                        <button class="btn btn-danger">Sair</button>
+                    </form>
+                </li>
+
+            </ul>
+        </div>
+    </div> <!-- Container acaba aqui -->
+</div>
