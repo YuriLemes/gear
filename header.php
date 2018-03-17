@@ -13,27 +13,48 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 	<title>Gear V1.0</title>
 </head>
 <body>
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <div class="navbar-header">
             <a href="home.php"><img src="img/logo.png" alt="logo sistema gear" width="110" height="50"/></a>
         </div>
-        <div>
-            <ul class="nav">
-                <li ><a class="btn btn-success btn-home" href="usuario-lista.php">Usuários</a></li>
-                <li ><a class="btn btn-success btn-home" href="#">Clientes</a></li>
-                <li ><a class="btn btn-success btn-home" href="#">Produtos</a></li>
-                <li>
-                    <form action="logout.php" method="post">
-                        <button class="btn btn-danger">Sair</button>
-                    </form>
-                </li>
 
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <div class="dropdown">
+                        <button class="btn btn-success btn-home dropdown-toggle" type="button" data-toggle="dropdown" id="dropdownCadastro" aria-haspopup="true" aria-expanded="false">
+                            Cadastros
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownCadastro">
+                            <a class="dropdown-item disabled" href="#">Clientes</a>
+                            <a class="dropdown-item disabled" href="#">Fornecedores</a>
+                            <a class="dropdown-item disabled" href="#">Produtos</a>
+                            <a class="dropdown-item disabled" href="#">Categoria Produtos</a>
+                            <a class="dropdown-item disabled" href="#">Despesas</a>
+                            <a class="dropdown-item" href="#">Serviços</a>
+                            <a class="dropdown-item" href="#">Usuários</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <div class="dropdown">
+                        <button class="btn btn-success btn-home dropdown-toggle" type="button" data-toggle="dropdown" id="dropdownCadastro" aria-haspopup="true" aria-expanded="false">
+                            Relatórios
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownCadastro">
+                            <a class="dropdown-item disabled" href="#">A DEFINIR</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
+            <form action="logout.php" method="post">
+                <button class="btn btn-danger">Sair</button>
+            </form>
         </div>
     </div> <!-- Container acaba aqui -->
 </div>
