@@ -61,3 +61,10 @@ input[type=password] {
 
 /* ESTILO HOME*/
 
+.menu{
+    
+    float: right;   
+    width: 165px; 
+    background-color: #5F9EA0;
+
+}
