@@ -77,9 +77,9 @@ input[type=password] {
 
     float: inside;
     cursor: pointer;
-    border-width: thin;
     border-radius: 5px;
-
+    white-space: normal;
+    border-color:#0D7628;
     margin-left: 10px;
 }
 
@@ -90,8 +90,7 @@ input[type=password] {
 
 .btn-home-titulo{
     font-family: Roboto;
-
-    margin-top: 10px; margin-bottom: -10px;
+    margin-bottom: -10px;
     font-size: 1.2em;
 }
 .centralizar{
