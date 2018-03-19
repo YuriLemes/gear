@@ -13,7 +13,7 @@ class Usuario {
     private $senha;
     private $perfil;
     private $ativo;
-    private $cnpj_oficina;
+    private $cnpj_empresa;
 
     /**
      * @return mixed
@@ -98,17 +98,17 @@ class Usuario {
     /**
      * @return mixed
      */
-    public function getCnpjOficina()
+    public function getCnpjEmpresa()
     {
-        return $this->cnpj_oficina;
+        return $this->cnpj_empresa;
     }
 
     /**
      * @param mixed $cnpj_oficina
      */
-    public function setCnpjOficina($cnpj_oficina)
+    public function setCnpjEmpresa($cnpj_empresa)
     {
-        $this->cnpj_oficina = $cnpj_oficina;
+        $this->cnpj_empresa = $cnpj_empresa;
     }
 
 

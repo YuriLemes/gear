@@ -47,7 +47,7 @@ class UsuarioBO {
 
         $_SESSION['login']['logado'] = true;
         $_SESSION['login']['usuario'] = $user->getLogin();
-        $_SESSION['login']['cnpj_empresa'] = $user->getCnpjOficina();
+        $_SESSION['login']['cnpj_empresa'] = $user->getCnpjEmpresa();
 
     }
 
@@ -61,7 +61,7 @@ class UsuarioBO {
         if(empty($usuario->getId())){
             $sql = "INSERT INTO tb_usuario (login, senha, perfil, ativo, cnpj_oficina) VALUES (:login, :senha, :perfil, :ativo, :cnpj_oficina)";
         } else {
-            $sql = "UPDATE tb_usuario SET login = :login, senha = :senha, perfil = :perfil, ativo = :ativo, cnpj_oficina = :cnpj_oficina WHERE id = :id";
+            $sql = "UPDATE tb_usuario SET login = :login, senha = :senha, perfil = :perfil, ativo = :ativo, cnpj_empresa = :cnpj_empresa WHERE id = :id";
         }
 
         $DB = db_connect();
@@ -70,7 +70,7 @@ class UsuarioBO {
         $stmt->bindParam(':senha',$usuario->getSenha());
         $stmt->bindParam(':perfil',$usuario->getPerfil());
         $stmt->bindParam(':ativo',$usuario->getAtivo());
-        $stmt->bindParam(':cnpj_oficina',$usuario->getCnpjOficina());
+        $stmt->bindParam(':cnpj_empresa',$usuario->getCnpjEmpresa());
         if(!empty($usuario->getId())){
             $stmt->bindParam(':id', $usuario->getId());
         }
@@ -82,17 +82,16 @@ class UsuarioBO {
      * Remove um usuário da base de dados.
      * @param Usuario $usuario
      */
-    static function remove(Usuario $usuario) {
+    static function remove($id) {
         $cnpj = $_SESSION['login']['cnpj_empresa'];
-        if(empty($usuario->getId()))
+        if(empty($id))
             throw new SistemaException("Para ser removido, o usuário deve possuir ID!");
 
-
-        $sql = "DELETE * FROM tb_usuario WHERE id = :id AND cnpj_oficina = :cnpj";
+        $sql = "DELETE * FROM tb_usuario WHERE id = :id AND cnpj_empresa = :cnpj_empresa";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
-        $stmt->bindParam(':id', $usuario->getId());
-        $stmt->bindParam(':cnpj', $cnpj);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':cnpj_empresa', $cnpj);
         $stmt->execute();
     }
 
@@ -102,10 +101,11 @@ class UsuarioBO {
      */
     static function findAll(){
         $cnpj = $_SESSION['login']['cnpj_empresa'];
-        $sql = "SELECT * FROM tb_usuario WHERE cnpj_oficina = :cnpj ORDER BY login";
+        $sql = "SELECT * FROM tb_usuario WHERE cnpj_empresa = :cnpj_empresa ORDER BY login";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
-        $stmt->bindParam(':cnpj', $cnpj);
+        $stmt->bindParam(':cnpj_empresa', $cnpj);
+        $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
     }
 
@@ -115,21 +115,21 @@ class UsuarioBO {
             return self::findAll();
 
         $cnpj = $_SESSION['login']['cnpj_empresa'];
-        $sql = "SELECT * FROM tb_usuario WHERE perfil = :perfil AND cnpj_oficina = :cnpj ORDER BY login";
+        $sql = "SELECT * FROM tb_usuario WHERE perfil = :perfil AND cnpj_empresa = :cnpj_empresa ORDER BY login";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':perfil', $perfil);
-        $stmt->bindParam(':cnpj', $cnpj);
+        $stmt->bindParam(':cnpj_empresa', $cnpj);
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
     }
 
     static function findByAtivo($ativo = true){
         $cnpj = $_SESSION['login']['cnpj_empresa'];
-        $sql = "SELECT * FROM tb_usuario WHERE ativo = :ativo AND cnpj_oficina = :cnpj ORDER BY login";
+        $sql = "SELECT * FROM tb_usuario WHERE ativo = :ativo AND cnpj_empresa = :cnpj_empresa ORDER BY login";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':ativo', $ativo);
-        $stmt->bindParam(':cnpj', $cnpj);
+        $stmt->bindParam(':cnpj_empresa', $cnpj);
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
     }
     /**
@@ -138,7 +138,7 @@ class UsuarioBO {
      * @throws SistemaException
      */
     static function validarDadosObrigatorios(Usuario $usuario){
-        if(empty($usuario->getLogin()) || empty($usuario->getSenha()) || empty($usuario->getPerfil()) || empty($usuario->getCnpjOficina())){
+        if(empty($usuario->getLogin()) || empty($usuario->getSenha()) || empty($usuario->getPerfil()) || empty($usuario->getCnpjEmpresa())){
             throw new SistemaException("Dados obrigatórios não informados!");
         }
     }

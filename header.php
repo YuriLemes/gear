@@ -57,7 +57,7 @@
                 </li>
             </ul>
             <form action="logout.php" method="post">
-                <button class="btn btn-danger">Sair</button>
+                <button class="btn btn-danger btn-sair">Sair</button>
             </form>
         </div>
     </div> <!-- Container acaba aqui -->

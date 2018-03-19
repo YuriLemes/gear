@@ -9,8 +9,9 @@
 class Servico
 {
     private $id;
-    private $descResumida;
-    private $descDetalhada;
+    private $descricao_resumida;
+    private $descricao_detalhada;
+    private $cnpj_empresa;
 
     /**
      * @return mixed
@@ -31,33 +32,49 @@ class Servico
     /**
      * @return mixed
      */
-    public function getDescResumida()
+    public function getDescricaoResumida()
     {
-        return $this->descResumida;
+        return $this->descricao_resumida;
     }
 
     /**
-     * @param mixed $descResumida
+     * @param mixed $descricao_resumida
      */
-    public function setDescResumida($descResumida)
+    public function setDescricaoResumida($descricao_resumida)
     {
-        $this->descResumida = $descResumida;
+        $this->descricao_resumida = $descricao_resumida;
     }
 
     /**
      * @return mixed
      */
-    public function getDescDetalhada()
+    public function getDescricaoDetalhada()
     {
-        return $this->descDetalhada;
+        return $this->descricao_detalhada;
     }
 
     /**
-     * @param mixed $descDetalhada
+     * @param mixed $descricao_detalhada
      */
-    public function setDescDetalhada($descDetalhada)
+    public function setDescricaoDetalhada($descricao_detalhada)
     {
-        $this->descDetalhada = $descDetalhada;
+        $this->descricao_detalhada = $descricao_detalhada;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCnpjEmpresa()
+    {
+        return $this->cnpj_empresa;
+    }
+
+    /**
+     * @param mixed $cnpj_empresa
+     */
+    public function setCnpjEmpresa($cnpj_empresa)
+    {
+        $this->cnpj_empresa = $cnpj_empresa;
     }
 
 }
