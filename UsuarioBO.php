@@ -72,7 +72,7 @@ class UsuarioBO {
         $stmt->bindParam(':ativo',$usuario->getAtivo());
         $stmt->bindParam(':cnpj_oficina',$usuario->getCnpjOficina());
         if(!empty($usuario->getId())){
-            $stmt->bindParam('id', $usuario->getId());
+            $stmt->bindParam(':id', $usuario->getId());
         }
 
         $stmt->execute();
@@ -83,15 +83,16 @@ class UsuarioBO {
      * @param Usuario $usuario
      */
     static function remove(Usuario $usuario) {
-
+        $cnpj = $_SESSION['login']['cnpj_empresa'];
         if(empty($usuario->getId()))
             throw new SistemaException("Para ser removido, o usuário deve possuir ID!");
 
 
-        $sql = "DELETE * FROM tb_usuario WHERE id = :id";
+        $sql = "DELETE * FROM tb_usuario WHERE id = :id AND cnpj_oficina = :cnpj";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':id', $usuario->getId());
+        $stmt->bindParam(':cnpj', $cnpj);
         $stmt->execute();
     }
 
@@ -104,7 +105,7 @@ class UsuarioBO {
         $sql = "SELECT * FROM tb_usuario WHERE cnpj_oficina = :cnpj ORDER BY login";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
-        $stmt->bindParam('cnpj', $cnpj);
+        $stmt->bindParam(':cnpj', $cnpj);
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
     }
 
@@ -117,8 +118,8 @@ class UsuarioBO {
         $sql = "SELECT * FROM tb_usuario WHERE perfil = :perfil AND cnpj_oficina = :cnpj ORDER BY login";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
-        $stmt->bindParam('perfil', $perfil);
-        $stmt->bindParam('cnpj', $cnpj);
+        $stmt->bindParam(':perfil', $perfil);
+        $stmt->bindParam(':cnpj', $cnpj);
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
     }
 
@@ -127,8 +128,8 @@ class UsuarioBO {
         $sql = "SELECT * FROM tb_usuario WHERE ativo = :ativo AND cnpj_oficina = :cnpj ORDER BY login";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
-        $stmt->bindParam('ativo', $ativo);
-        $stmt->bindParam('cnpj', $cnpj);
+        $stmt->bindParam(':ativo', $ativo);
+        $stmt->bindParam(':cnpj', $cnpj);
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
     }
     /**
@@ -138,7 +139,7 @@ class UsuarioBO {
      */
     static function validarDadosObrigatorios(Usuario $usuario){
         if(empty($usuario->getLogin()) || empty($usuario->getSenha()) || empty($usuario->getPerfil()) || empty($usuario->getCnpjOficina())){
-            throw new SistemaException("Dados Obrigatorios não Preenchidos");
+            throw new SistemaException("Dados obrigatórios não informados!");
         }
     }
 }
