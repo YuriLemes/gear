@@ -3,6 +3,7 @@
 /*  ESTILO LOGIN */
 body{
     text-align: center;
+    background-color: #fdfdfd;
 }
 .login-principal {
     background: white;
@@ -67,4 +68,43 @@ input[type=password] {
     width: 165px; 
     background-color: #5F9EA0;
 
+}
+
+.btn-home-central{
+    width: 185px;
+    height: 207px;
+    background-color: white;
+
+    float: inside;
+    cursor: pointer;
+    border-width: thin;
+    border-radius: 5px;
+
+    margin-left: 10px;
+}
+
+.btn-home-central:hover, .btn-home-central:focus{
+    background-color: #B0BEC5;
+    box-shadow: 0.3em 0.3em 0.3em 0.1em #808080;
+}
+
+.btn-home-titulo{
+    font-family: Roboto;
+
+    margin-top: 10px; margin-bottom: -10px;
+    font-size: 1.2em;
+}
+.centralizar{
+    margin: auto;
+    margin-top: 5em;
+    text-align: center;
+}
+
+.centralizar div {
+    margin-top: 1em;
+}
+
+.icone-home {
+    font-size: 6em;
+    color: #0D7628;
 }

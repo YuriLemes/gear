@@ -10,17 +10,21 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/fa-svg-with-js.css"/>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script defer src="js/fontawesome-all.js"></script>
 	<title>Gear V1.0</title>
 </head>
 <body>
 <div class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <div class="navbar-header">
-            <a href="home.php"><img src="img/logo.png" alt="logo sistema gear" width="110" height="50"/></a>
+            <a href="home.php"><img src="img/logo_pequena.png" alt="logo sistema gear"/></a>
         </div>
 
         <div class="collapse navbar-collapse">
