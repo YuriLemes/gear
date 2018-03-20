@@ -24,7 +24,7 @@
 <div class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <div class="navbar-header">
-            <a href="home.php"><i style="color: #0D7628; margin-right: 3px;" class="fas fa-home fa-lg"></i><img src="img/logo_pequena.png" alt="logo sistema gear"/></a>
+            <a href="home.php"><i style="color: #0D7628; margin-right: 3px;" class="fas fa-home fa-lg"></i><img src="img/logo_small.png" alt="logo sistema gear"/></a>
         </div>
 
         <div class="collapse navbar-collapse">
