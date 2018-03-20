@@ -1,5 +1,6 @@
 <?php
 require_once 'SistemaException.php';
+require_once'Usuario.php';
 class UsuarioBO {
 
     /**
@@ -101,7 +102,7 @@ class UsuarioBO {
      */
     static function findAll(){
         $cnpj = $_SESSION['login']['cnpj_empresa'];
-        $sql = "SELECT * FROM tb_usuario WHERE cnpj_empresa = :cnpj_empresa ORDER BY login";
+        $sql = "SELECT id, login, senha, perfil, ativo, cnpj_empresa FROM tb_usuario WHERE cnpj_empresa = :cnpj_empresa ORDER BY login";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':cnpj_empresa', $cnpj);

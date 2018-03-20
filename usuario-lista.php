@@ -1,6 +1,6 @@
 <?php include('header.php');
-require_once('ServicoBO.php');
-    $servicos = ServicoBO::findAll();
+require_once('UsuarioBO.php');
+    $usuarios = UsuarioBO::findAll();
 ?>
 
 	
@@ -11,19 +11,22 @@ require_once('ServicoBO.php');
                     <th>Nome</th>
                     <th>Login</th>
                     <th>Perfil</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-   <?php foreach ($servicos as $servico):?>
+   <?php foreach ($usuarios as $usuario):?>
                     <tr>
-                        <td><?=$servico->getDescricaoResumida()?></td>
+                        <td>João</td>
+                        <td><?=$usuario->getLogin()?></td>
+                        <td><?=$usuario->getPerfil()?></td>
                         <td>
                             <form action="#" method="post">
                                 <button class="tooltip btn btn-primary disabled" type="submit" formaction="#">
                                     <i class="fas fa-pencil-alt"></i>
                                     <span class="tooltiptext">Alterar</span>
                                 </button>
-                                <button class="tooltip btn btn-danger disabled" type="submit" formaction="servico-remover.php?id=<?=$servico->getId()?>">
+                                <button class="tooltip btn btn-danger disabled" type="submit" formaction="servico-remover.php?id=<?=$usuario->getId()?>">
                                     <i class="fas fa-times"></i>
                                     <span class="tooltiptext">Remover</span>
                                 </button>
@@ -35,5 +38,7 @@ require_once('ServicoBO.php');
         </table>
     </div>
 </div>
-
-    <?php include('footer.php')?>
+<div class="container">
+    <input type="button" class="btn btn-success" value="Novo"/>
+</div>
+<?php include('footer.php')?>
