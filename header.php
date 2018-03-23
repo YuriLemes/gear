@@ -40,8 +40,8 @@
                             <a class="dropdown-item disabled" href="#">Produtos</a>
                             <a class="dropdown-item disabled" href="#">Categoria Produtos</a>
                             <a class="dropdown-item disabled" href="#">Despesas</a>
-                            <a class="dropdown-item" href="#">Serviços</a>
-                            <a class="dropdown-item" href="#">Usuários</a>
+                            <a class="dropdown-item" href="serviço-lista.php">Serviços</a>
+                            <a class="dropdown-item" href="usuario-lista">Usuários</a>
                         </div>
                     </div>
                 </li>
