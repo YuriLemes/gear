@@ -71,11 +71,7 @@
 		</p>
 		<div class="containerb centralizar">
 			<fieldset>
-<<<<<<< HEAD
-				<button type="button" class="btn btn-primary" id="btn-alterar" style="color: white;">
-=======
 				<button type="button" class="btn btn-primary" id="btn-alterar" ">
->>>>>>> origin/master
 					<span>
 						<i class="fas fa-edit"></i> Alterar
 					</span>
@@ -85,15 +81,11 @@
 						<i class="far fa-save"></i> Salvar
 					</span>
 				</button>
-				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="window.location.href='usuario-lista.php';">
+				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="window.location.href='usuario-lista';">
 					<span>
 						<i class="fas fa-times"></i> Cancelar
 					</span>
-<<<<<<< HEAD
                 </button>
-=======
-				</button>
->>>>>>> origin/master
 			</fieldset>
 		</div>
 	</form>
