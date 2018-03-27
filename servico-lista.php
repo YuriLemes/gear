@@ -41,6 +41,6 @@
     </div>
 </div>
 <div class="container">
-    <input type="button" class="btn btn-success <?php if(!adminLogado()) echo "disabled" ?>" <?php if(!adminLogado()) echo "disabled" ?> value="Novo"/>
+    <input type="button" onclick="window.location.href='servico-cadastro.php';" class="btn btn-success <?php if(!adminLogado()) echo "disabled" ?>" <?php if(!adminLogado()) echo "disabled" ?> value="Novo" />
 </div>
 <?php include('footer.php')?>
