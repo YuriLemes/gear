@@ -42,7 +42,7 @@ require_once('UsuarioBO.php');
                                         endif;?>
                                         type="submit"
                                         onclick="return confirm('Confirma a suspensão deste usuário?')"
-                                        formaction="servico-suspender.php?id=<?=$usuario->getId()?>">
+                                        formaction="usuario-suspender.php?id=<?=$usuario->getId()?>">
                                     <i class="fas fa-minus-square"></i>
                                     <span class="tooltiptext">Suspender</span>
                                 </button>

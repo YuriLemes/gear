@@ -96,7 +96,7 @@ class UsuarioBO {
         if(empty($id))
             throw new SistemaException("Para ser removido, o usuário deve possuir ID!");
 
-        $sql = "DELETE * FROM tb_usuario WHERE id = :id AND cnpj_empresa = :cnpj_empresa";
+        $sql = "DELETE FROM tb_usuario WHERE id = :id AND cnpj_empresa = :cnpj_empresa";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':id', $id);
