@@ -21,10 +21,11 @@ class UsuarioBO {
      */
     static function logar(Usuario $usuario) {
 
-        if($usuario->getLogin() == "adm" && $usuario->getSenha() == "123"){
+        if($usuario->getLogin() == "admin" && $usuario->getSenha() == "123"){
             $_SESSION['login']['logado'] = true;
+            $_SESSION['login']['admin'] = true;
             $_SESSION['login']['usuario'] = $usuario->getLogin();
-            $_SESSION['login']['cnpj_empresa'] = "00000000000000";
+            $_SESSION['login']['cnpj_empresa'] = "01234567890123";
             return;
         }
         if(empty($usuario->getLogin()))
@@ -47,6 +48,11 @@ class UsuarioBO {
         $user = $usuarios[0];
 
         $_SESSION['login']['logado'] = true;
+        if($user->getPerfil() == "ADMIN"){
+            $_SESSION['login']['admin'] = true;
+        }else{
+            $_SESSION['login']['admin'] = false;
+        }
         $_SESSION['login']['usuario'] = $user->getLogin();
         $_SESSION['login']['cnpj_empresa'] = $user->getCnpjEmpresa();
 
@@ -60,13 +66,14 @@ class UsuarioBO {
         self::validarDadosObrigatorios($usuario);
         $sql = null;
         if(empty($usuario->getId())){
-            $sql = "INSERT INTO tb_usuario (login, senha, perfil, ativo, cnpj_oficina) VALUES (:login, :senha, :perfil, :ativo, :cnpj_oficina)";
+            $sql = "INSERT INTO tb_usuario (nome, login, senha, perfil, ativo, cnpj_oficina) VALUES (:nome, :login, :senha, :perfil, :ativo, :cnpj_oficina)";
         } else {
-            $sql = "UPDATE tb_usuario SET login = :login, senha = :senha, perfil = :perfil, ativo = :ativo, cnpj_empresa = :cnpj_empresa WHERE id = :id";
+            $sql = "UPDATE tb_usuario SET nome = :nome, login = :login, senha = :senha, perfil = :perfil, ativo = :ativo, cnpj_empresa = :cnpj_empresa WHERE id = :id";
         }
 
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
+        $stmt->bindParam(':nome', $usuario->getNome());
         $stmt->bindParam(':login', $usuario->getLogin());
         $stmt->bindParam(':senha',$usuario->getSenha());
         $stmt->bindParam(':perfil',$usuario->getPerfil());
@@ -102,7 +109,8 @@ class UsuarioBO {
      */
     static function findAll(){
         $cnpj = $_SESSION['login']['cnpj_empresa'];
-        $sql = "SELECT id, login, senha, perfil, ativo, cnpj_empresa FROM tb_usuario WHERE cnpj_empresa = :cnpj_empresa ORDER BY login";
+        /*id, nome, login, senha, perfil, ativo, cnpj_empresa*/
+        $sql = "SELECT * FROM tb_usuario WHERE cnpj_empresa = :cnpj_empresa ORDER BY login";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':cnpj_empresa', $cnpj);
@@ -139,7 +147,7 @@ class UsuarioBO {
      * @throws SistemaException
      */
     static function validarDadosObrigatorios(Usuario $usuario){
-        if(empty($usuario->getLogin()) || empty($usuario->getSenha()) || empty($usuario->getPerfil()) || empty($usuario->getCnpjEmpresa())){
+        if(empty($usuario->getNome()) || empty($usuario->getLogin()) || empty($usuario->getSenha()) || empty($usuario->getPerfil()) || empty($usuario->getCnpjEmpresa())){
             throw new SistemaException("Dados obrigatórios não informados!");
         }
     }

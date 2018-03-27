@@ -23,8 +23,9 @@
 <body>
 <div class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <div class="navbar-header">
+        <div class="tooltip navbar-header" >
             <a href="home.php"><i style="color: #0D7628; margin-right: 3px;" class="fas fa-home fa-lg"></i><img src="img/logo_small.png" alt="logo sistema gear"/></a>
+            <span class="tooltiptext">Tela principal</span>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -56,8 +57,9 @@
                     </div>
                 </li>
             </ul>
+            <p><i class="fas fa-user"></i><b> <?php echo strtoupper($_SESSION['login']['usuario']) ?></b></p>
             <form action="logout.php" method="post">
-                <button class="btn btn-danger btn-sair">Sair</button>
+                <button style="margin-left: 10px;"class="btn btn-danger btn-sair">Sair</button>
             </form>
         </div>
     </div> <!-- Container acaba aqui -->

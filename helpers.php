@@ -50,3 +50,15 @@ function estaLogado()
 
     return true;
 }
+
+function adminLogado(){
+    if(!estaLogado()){
+        return false;
+    }
+
+    if($_SESSION['login']['admin'] == true){
+        return true;
+    }
+
+    return false;
+}

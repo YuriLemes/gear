@@ -20,11 +20,15 @@
                         <td><?=$servico->getDescricaoResumida()?></td>
                         <td>
                             <form action="#" method="post">
-                                <button class="tooltip btn btn-primary disabled" type="submit" formaction="#">
+                                <button class="tooltip btn btn-info" type="submit" formaction="#">
+                                    <i class="fas fa-eye"></i>
+                                    <span class="tooltiptext">Visualizar</span>
+                                </button>
+                                <button class="tooltip btn btn-primary <?php if(!adminLogado()) echo "disabled" ?>" <?php if(!adminLogado()) echo "disabled" ?> type="submit" formaction="#">
                                     <i class="fas fa-pencil-alt"></i>
                                     <span class="tooltiptext">Alterar</span>
                                 </button>
-                                <button class="tooltip btn btn-danger disabled" type="submit" formaction="servico-remover.php?id=<?=$servico->getId()?>">
+                                <button class="tooltip btn btn-danger <?php if(!adminLogado()) echo "disabled" ?>" <?php if(!adminLogado()) echo "disabled" ?> type="submit" formaction="servico-remover.php?id=<?=$servico->getId()?>">
                                     <i class="fas fa-times"></i>
                                     <span class="tooltiptext">Remover</span>
                                 </button>
@@ -37,6 +41,6 @@
     </div>
 </div>
 <div class="container">
-    <input type="button" class="btn btn-success" value="Novo"/>
+    <input type="button" class="btn btn-success<?php if(!adminLogado()) echo "disabled" ?>" <?php if(!adminLogado()) echo "disabled" ?> value="Novo"/>
 </div>
 <?php include('footer.php')?>
