@@ -4,16 +4,16 @@
 	<form method="post" class="form-inline" role="form" action="cadastrar-servico" id="form-servico">
 		<div class="containern">
 			<fieldset>
-				<div class="form-group">
+				<div>
 					<label for="servico">Serviço:</label>
 					<input type="text" name="cservico" id="servico" class="form-control" required maxlength="25" />
 					<span class="error">
 						*
 					</span>
 				</div>
-				<div class="form-group">
+				<div>
 					<label for="descricao">Descrição:</label>
-					<input type="text" name="cdesc" id="desc" class="form-control" rows="5" required maxlength="250" />
+					<textarea name="tdesc" id="cdesc" cols="45" rows="5"></textarea>
 				</div>
 			</fieldset>
 		</div>
