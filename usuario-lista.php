@@ -4,7 +4,7 @@ require_once('UsuarioBO.php');
 ?>
 
 <div class="container centralizar">
-  <table class="table table-striped table-bordered">
+  <table class="table-fixed table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>Nome</th>

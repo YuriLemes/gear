@@ -44,7 +44,7 @@ CREATE TABLE `tb_usuario` (
   `nome` varchar(60) NOT NULL,
   `login` varchar(10) NOT NULL,
   `senha` varchar(5) DEFAULT NULL,
-  `perfil` varchar(9) NOT NULL,
+  `perfil` enum('ADMIN', 'USUARIO') NOT NULL,
   `ativo` tinyint(4) NOT NULL,
   `cnpj_empresa` varchar(14) NOT NULL,
   PRIMARY KEY (`id`)
@@ -56,7 +56,7 @@ CREATE TABLE `tb_usuario` (
 INSERT INTO `tb_usuario` VALUES ('1', 'Supervisor', 'admin', '123', 'ADMIN', '1', '10720580000180');
 INSERT INTO `tb_usuario` VALUES ('2', 'Yuri Lemes', 'yuri', '123', 'ADMIN', '1', '10720580000180');
 INSERT INTO `tb_usuario` VALUES ('3', 'João da Silva', 'joao', '123', 'ADMIN', '1', '01234567890123');
-INSERT INTO `tb_usuario` VALUES ('4', 'Maria das Dores', 'maria', '123', 'USER', '1', '10720580000180');
+INSERT INTO `tb_usuario` VALUES ('4', 'Maria das Dores', 'maria', '123', 'USUARIO', '1', '10720580000180');
 INSERT INTO `tb_usuario` VALUES ('5', 'Elieber', 'elieber', '123', 'ADMIN', '1', '01234567890123');
 INSERT INTO `tb_usuario` VALUES ('6', 'Gabriel', 'gabriel', '123', 'ADMIN', '1', '01234567890123');
 INSERT INTO `tb_usuario` VALUES ('7', 'Izabela Andrade', 'izabela', '123', 'ADMIN', '1', '01234567890123');

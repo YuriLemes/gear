@@ -1,6 +1,7 @@
 <?php
 require_once 'SistemaException.php';
 require_once'Usuario.php';
+require_once'Perfil.php';
 class UsuarioBO {
 
     /**
@@ -48,7 +49,7 @@ class UsuarioBO {
         $user = $usuarios[0];
 
         $_SESSION['login']['logado'] = true;
-        if($user->getPerfil() == "ADMIN"){
+        if($user->getPerfil() == Perfil::ADMIN){
             $_SESSION['login']['admin'] = true;
         }else{
             $_SESSION['login']['admin'] = false;
