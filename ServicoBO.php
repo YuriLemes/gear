@@ -41,15 +41,15 @@ class ServicoBO {
      * Remove um Serviço da base de dados.
      * @param Servico $servico
      */
-    public static function remove(Servico $servico) {
+    public static function remove($id) {
         $cnpj = $_SESSION['login']['cnpj_empresa'];
-        if(empty($servico->getId()))
+        if(empty($id))
             throw new SistemaException("Para ser removido, o serviço deve possuir ID!");
 
-        $sql = "DELETE * FROM tb_servico WHERE id = :id AND cnpj_empresa = :cnpj";
+        $sql = "DELETE FROM tb_servico WHERE id = :id AND cnpj_empresa = :cnpj";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
-        $stmt->bindParam(':id', $servico->getId());
+        $stmt->bindParam(':id', $id);
         $stmt->bindParam(':cnpj', $cnpj);
         $stmt->execute();
     }

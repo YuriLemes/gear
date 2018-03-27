@@ -3,7 +3,20 @@
     require_once('ServicoBO.php');
     $servicos = ServicoBO::findAll();
 ?>
+<?php
 
+if(!empty($_SESSION['excecao']['mensagem'])) :
+    $msg = $_SESSION['excecao']['mensagem'];
+    unset($_SESSION['excecao']['mensagem']);
+    ?>
+
+    <div class="alert alert-danger alert-dismissible fade in show">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <?=$msg?>
+    </div>
+<?php
+    endif;
+?>
 <div class="container">
     <h1>Portifólio de Serviços</h1>
     <div>
@@ -28,7 +41,14 @@
                                     <i class="fas fa-pencil-alt"></i>
                                     <span class="tooltiptext">Alterar</span>
                                 </button>
-                                <button class="tooltip btn btn-danger <?php if(!adminLogado()) echo "disabled" ?>" <?php if(!adminLogado()) echo "disabled" ?> type="submit" formaction="servico-remover.php?id=<?=$servico->getId()?>">
+                                <button class="tooltip btn btn-danger
+                                <?php
+                                    if(!adminLogado())
+                                        echo "disabled" ?>" <?php
+                                    if(!adminLogado())
+                                        echo "disabled" ?>
+                                    type="submit" onclick="return confirm('Confirma remover este serviço?')"
+                                    formaction="servico-remover.php?id=<?=$servico->getId()?>">
                                     <i class="fas fa-times"></i>
                                     <span class="tooltiptext">Remover</span>
                                 </button>
