@@ -1,6 +1,6 @@
 <?php include('header.php');
 require_once('UsuarioBO.php');
-    $usuarios = UsuarioBO::findAll();
+    $usuarios = UsuarioBO::findAllActive();
 ?>
 
 <div class="container centralizar">
@@ -40,9 +40,11 @@ require_once('UsuarioBO.php');
                                         elseif (!adminLogado()):
                                             echo "disabled" ?>" <?php echo "disabled";
                                         endif;?>
-                                        type="submit" formaction="servico-remover.php?id=<?=$usuario->getId()?>">
-                                    <i class="fas fa-times"></i>
-                                    <span class="tooltiptext">Remover</span>
+                                        type="submit"
+                                        onclick="return confirm('Confirma a suspensão deste usuário?')"
+                                        formaction="servico-suspender.php?id=<?=$usuario->getId()?>">
+                                    <i class="fas fa-minus-square"></i>
+                                    <span class="tooltiptext">Suspender</span>
                                 </button>
                             </form>
                         </td>

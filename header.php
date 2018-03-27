@@ -56,7 +56,7 @@
                     </div>
                 </li>
             </ul>
-            <p><i class="fas fa-user"></i><b> <?php echo strtoupper($_SESSION['login']['usuario']) ?></b></p>
+            <div><i class="fas fa-user"></i><b> <?php echo strtoupper($_SESSION['login']['usuario']) ?></b></div>
             <form action="logout.php" method="post">
                 <button style="margin-left: 10px;"class="btn btn-danger btn-sair">Sair</button>
             </form>

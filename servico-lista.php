@@ -28,7 +28,7 @@
                                     <i class="fas fa-pencil-alt"></i>
                                     <span class="tooltiptext">Alterar</span>
                                 </button>
-                                <button class="tooltip btn btn-danger <?php if(!adminLogado()) echo "disabled" ?>" <?php if(!adminLogado()) echo "disabled" ?> type="submit" formaction="servico-remover.php?id=<?=$servico->getId()?>">
+                                <button class="tooltip btn btn-danger <?php if(!adminLogado()) echo "disabled" ?>" <?php if(!adminLogado()) echo "disabled" ?> type="submit" onclick="return confirm('Confirma remover este serviço?')" formaction="servico-remover.php?id=<?=$servico->getId()?>">
                                     <i class="fas fa-times"></i>
                                     <span class="tooltiptext">Remover</span>
                                 </button>
