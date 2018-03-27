@@ -58,7 +58,7 @@
 			<fieldset>
 				<div class="form-group">
 					<label for="cnpj">CNPJ Empresa: </label>
-					<input type="text" name="ccnjp" id="cnpj" disabled placeholder="00.000.000/0000-00" class="form-control" maxlength="14" />
+					<input type="text" name="ccnjp" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>" disabled placeholder="00.000.000/0000-00" class="form-control" maxlength="14" />
 				</div>
 			</fieldset>
 		</div>
@@ -81,11 +81,11 @@
 						<i class="far fa-save"></i> Salvar
 					</span>
 				</button>
-				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="window.location.href='usuario-lista.php';">
+				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="window.location.href='usuario-lista';">
 					<span>
 						<i class="fas fa-times"></i> Cancelar
 					</span>
-				</button>
+                </button>
 			</fieldset>
 		</div>
 	</form>
