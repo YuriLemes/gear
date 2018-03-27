@@ -21,15 +21,15 @@ require_once('UsuarioBO.php');
                         <td><?=$usuario->getPerfil()?></td>
                         <td>
                             <form action="#" method="post">
-                                <button class="tooltip btn btn-info" type="submit" formaction="#">
+                                <button class="tooltip btn btn-info" type="submit" formaction="usuario-visualizacao">
                                     <i class="fas fa-eye"></i>
                                     <span class="tooltiptext">Visualizar</span>
                                 </button>
-                                <button class="tooltip btn btn-primary
+                                <button  class="tooltip btn btn-primary
                                     <?php
                                         if(!adminLogado() && $_SESSION['login']['usuario'] != $usuario->getLogin()):
                                             echo "disabled" ?>" <?php echo "disabled";
-                                        endif;?> type="submit" formaction="#">
+                                        endif;?> type="submit" formaction="usuario-alteracao.php">
                                     <i class="fas fa-pencil-alt"></i>
                                     <span class="tooltiptext">Alterar</span>
                                 </button>

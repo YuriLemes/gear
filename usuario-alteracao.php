@@ -1,13 +1,13 @@
 <?php include('header.php');?>
 <div class="containerprincipal">
-	<h5>Cadastro de Usuário</h5>
+	<h5>Alteração de Usuário</h5>
 	
-	<form method="post" class="form-inline" role="form" action="cadastrar-usuario" id="form-usuario">		
+	<form method="post" class="form-inline" role="form" action="alterar-usuario" id="form-usuario">		
 		<div class="containern">
 			<fieldset>
 				<div class="form-group">
 					<label for="nome">Nome:</label>
-					<input type="text" name="cnome" id="nome" class="form-control"  required maxlength="60" />
+					<input type="text" name="cnome" id="nome" class="form-control"  required maxlength="60" disabled />
 					<span class="error">
 						*
 					</span>
@@ -19,14 +19,14 @@
 			<fieldset>
 				<div class="form-group">
 					<label for="login">Login:</label>
-					<input type="text" name="clogin" id="login" class="form-control" required maxlength="10" />
+					<input type="text" name="clogin" id="login" class="form-control" required maxlength="10" disabled />
 					<span class="error">
 						*
 					</span>
 				</div>
 				<div class="form-group">
 					<label for="perfil">Perfil:</label>
-					<select id="perfil" class="form-control" required name="cperfil">
+					<select id="perfil" class="form-control" required name="cperfil" disabled>
 						<option selected disabled> Escolha uma opção:</option>
 						<option>Administrador</option>
 						<option>Funcionário</option>
@@ -41,12 +41,12 @@
 			<fieldset>
 				<div class="form-group">
 					<label for="senha" style="margin-left: 37px;">Senha:</label>
-					<input type="password" name="csenha" id="senha-usuario" class="form-control" maxlength="5" />
+					<input type="password" name="csenha" id="senha-usuario" class="form-control" maxlength="5" disabled />
 				</div>
 
 				<div class="form-group">
 					<label for="ativo" style="margin-left: 35px;">Ativo:</label>
-					<input type="checkbox" name="cativo" id="ativo" class="form-control" checked="checked" />
+					<input type="checkbox" name="cativo" id="ativo" class="form-control" checked="checked" disabled />
 					<span class="error">
 						*
 					</span>
