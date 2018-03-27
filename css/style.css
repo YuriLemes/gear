@@ -163,7 +163,7 @@ h5{
     background-color: #fdfdfd;
     margin: auto;
     width: 700px;
-    height: 350px;
+    height: 400px;
     box-shadow: 0.3em 0.3em 0.3em 0.3em #808080;
     border-radius: 8px;
     margin-top: 40px;
@@ -211,7 +211,28 @@ h5{
 .form-group{
     padding-bottom: 15px;
 }
+p{
+    padding-left: 35px;
+   
+}
+span.error{
+    text-align: : left;
+    font-size: 12px;
+    color: red;
+}
 /*FIM ESTILO USUÁRIO*/
+
+/*INÍCIO ESTILO SERVIÇO */
+
+#servico{
+    width: 400px;
+    margin-left: 30px;
+}
+
+#cdesc{
+    margin-left: 30px;
+}
+/* */
 
 .tooltip {
     position: relative;
