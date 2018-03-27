@@ -12,7 +12,7 @@
  */
 function db_connect(){
 
-    $PDO = new PDO(sprintf('mysql:dbname=%s;host=%s', getConfig('db.dbname'), getConfig('db.host')), getConfig('db.user'), getConfig('db.pass'));
+    $PDO = new PDO(sprintf('mysql:dbname=%s;host=%s;charset=utf8', getConfig('db.dbname'), getConfig('db.host')), getConfig('db.user'), getConfig('db.pass'));
     return $PDO;
 }
 

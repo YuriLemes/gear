@@ -23,9 +23,8 @@
 <body>
 <div class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <div class="tooltip navbar-header" >
+        <div class="navbar-header" >
             <a href="home.php"><i style="color: #0D7628; margin-right: 3px;" class="fas fa-home fa-lg"></i><img src="img/logo_small.png" alt="logo sistema gear"/></a>
-            <span class="tooltiptext">Tela principal</span>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -41,7 +40,7 @@
                             <a class="dropdown-item disabled" href="#">Produtos</a>
                             <a class="dropdown-item disabled" href="#">Categoria Produtos</a>
                             <a class="dropdown-item disabled" href="#">Despesas</a>
-                            <a class="dropdown-item" href="servico-lista.php">Serviços</a>
+                            <a class="dropdown-item" href="servico-lista">Serviços</a>
                             <a class="dropdown-item" href="usuario-lista">Usuários</a>
                         </div>
                     </div>
