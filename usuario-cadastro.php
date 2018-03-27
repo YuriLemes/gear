@@ -1,12 +1,16 @@
 <?php include('header.php');?>
 <div class="containerprincipal">
 	<h5>Cadastro de Usuário</h5>
+	
 	<form method="post" class="form-inline" role="form" action="cadastrar-usuario" id="form-usuario">		
 		<div class="containern">
 			<fieldset>
 				<div class="form-group">
 					<label for="nome">Nome:</label>
 					<input type="text" name="cnome" id="nome" class="form-control"  required maxlength="60" />
+					<span class="error">
+						*
+					</span>
 				</div>
 			</fieldset>
 		</div>
@@ -16,28 +20,38 @@
 				<div class="form-group">
 					<label for="login">Login:</label>
 					<input type="text" name="clogin" id="login" class="form-control" required maxlength="10" />
+					<span class="error">
+						*
+					</span>
 				</div>
 				<div class="form-group">
 					<label for="perfil">Perfil:</label>
-					<select id="perfil" class="form-control">
+					<select id="perfil" class="form-control" required name="cperfil">
 						<option selected disabled> Escolha uma opção:</option>
 						<option>Administrador</option>
 						<option>Funcionário</option>
 					</select>
+					<span class="error">
+						*
+					</span>
 				</div>
 			</fieldset>
 		</div>
 		<div class="containera">
 			<fieldset>
 				<div class="form-group">
-					<label for="senha">Senha:</label>
+					<label for="senha" style="margin-left: 37px;">Senha:</label>
 					<input type="password" name="csenha" id="senha-usuario" class="form-control" maxlength="5" />
 				</div>
 
 				<div class="form-group">
-					<label for="ativo">Ativo:</label>
-					<input type="checkbox" name="cativo" id="ativo" value="Sim" class="form-control" checked />
-				</div>	
+					<label for="ativo" style="margin-left: 35px;">Ativo:</label>
+					<input type="checkbox" name="cativo" id="ativo" class="form-control" checked="checked" />
+					<span class="error">
+						*
+					</span>
+				</div>
+
 			</fieldset>
 		</div>	
 		<div class="containerc">
@@ -48,9 +62,20 @@
 				</div>
 			</fieldset>
 		</div>
+		<p>
+			<span class="error"> 
+				<font>
+					*Campos Obrigatórios
+				</font>
+			</span>
+		</p>
 		<div class="containerb centralizar">
 			<fieldset>
+<<<<<<< HEAD
 				<button type="button" class="btn btn-primary" id="btn-alterar" style="color: white;">
+=======
+				<button type="button" class="btn btn-primary" id="btn-alterar" ">
+>>>>>>> origin/master
 					<span>
 						<i class="fas fa-edit"></i> Alterar
 					</span>
@@ -64,10 +89,15 @@
 					<span>
 						<i class="fas fa-times"></i> Cancelar
 					</span>
+<<<<<<< HEAD
                 </button>
+=======
+				</button>
+>>>>>>> origin/master
 			</fieldset>
 		</div>
 	</form>
 </div>
 <?php include('footer.php')?>
+
 
