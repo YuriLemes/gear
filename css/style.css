@@ -104,7 +104,7 @@ input[type=password] {
 /* ESTILO HOME*/
 
 .menu{
-
+    
     float: right;   
     width: 165px; 
     background-color: #5F9EA0;
@@ -147,8 +147,14 @@ input[type=password] {
 .icone-home {
     font-size: 6em;
     color: #0D7628;
+}.navbar navbar-expand-lg navbar-light bg-light{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 16px;
+    padding-right: 16px;
+    width: 1093px;
+    height: 38px;
 }
-
 /*ESTILO USUÁRIO*/
 h5{
     background-color: #0d7628;
@@ -157,21 +163,19 @@ h5{
     height: 35px;
     text-align: center;
 }
-form{
+#form-usuario{
     height: 300px;
 }
-
-form label{
+.form-group label{
     float: left;
     text-align: center;
     width: 50px;
 }
-
 .containern{
     padding-left: 40px;
     padding-bottom: 0px;
 }
-.container{
+.containera{
     min-height: 106px;
     max-width: 350px;
     padding-left: 40px;
@@ -188,21 +192,22 @@ form label{
 }
 
 .containerprincipal{
-    padding-top: 5px;
+    padding-top: 0px;
     background: white;
     background-color: #fdfdfd;
-    margin: 2em ;
+    margin: auto;
     width: 700px;
-    height: 350px;
+    height: 380px;
     box-shadow: 0.3em 0.3em 0.3em 0.3em #808080;
     border-radius: 8px;
+    margin-top: 40px;
 
 }
 #login{
     width: 204px;
     margin-left: 12px;
 }
-#senha{
+#senha-usuario{
     margin-left: 12px;
     margin-right: 15px;
     width: 188px;
@@ -215,7 +220,7 @@ form label{
 #cnpj{
     width: 204px;
     margin-bottom: 5px;
-    margin-left: 13px;
+    margin-left: 13px; 
 }
 
 #perfil{
@@ -225,9 +230,8 @@ form label{
 #ativo{
     margin-left: 18px;
 }
-.btn {
+.btn-warning{
     color: white;
-
 }
 .btn-warning:hover {
     color: white;
@@ -240,7 +244,14 @@ form label{
 }
 .form-group{
     padding-bottom: 15px;
-
 }
-
+p{
+    padding-left: 35px;
+   
+}
+span.error{
+    text-align: : left;
+    font-size: 12px;
+    color: #FF0000;
+}
 /*FIM ESTILO USUÁRIO*/
