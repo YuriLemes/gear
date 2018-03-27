@@ -197,7 +197,11 @@ h5{
     background-color: #fdfdfd;
     margin: auto;
     width: 700px;
+<<<<<<< HEAD
     height: 380px;
+=======
+    height: 350px;
+>>>>>>> cf2302187a7d229eb8950124e546262e9e691c04
     box-shadow: 0.3em 0.3em 0.3em 0.3em #808080;
     border-radius: 8px;
     margin-top: 40px;
@@ -220,7 +224,11 @@ h5{
 #cnpj{
     width: 204px;
     margin-bottom: 5px;
+<<<<<<< HEAD
     margin-left: 13px; 
+=======
+    margin-left: 13px;
+>>>>>>> cf2302187a7d229eb8950124e546262e9e691c04
 }
 
 #perfil{
@@ -245,6 +253,7 @@ h5{
 .form-group{
     padding-bottom: 15px;
 }
+<<<<<<< HEAD
 p{
     padding-left: 35px;
    
@@ -254,4 +263,6 @@ span.error{
     font-size: 12px;
     color: #FF0000;
 }
+=======
+>>>>>>> cf2302187a7d229eb8950124e546262e9e691c04
 /*FIM ESTILO USUÁRIO*/
