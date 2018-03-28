@@ -22,11 +22,11 @@ class UsuarioBO {
      */
     static function logar(Usuario $usuario) {
 
-        if($usuario->getLogin() == "admin" && $usuario->getSenha() == "123"){
+        if($usuario->getLogin() == "gear" && $usuario->getSenha() == "gear@123"){
             $_SESSION['login']['logado'] = true;
             $_SESSION['login']['admin'] = true;
             $_SESSION['login']['usuario'] = $usuario->getLogin();
-            $_SESSION['login']['cnpj_empresa'] = "01234567890123";
+            $_SESSION['login']['cnpj_empresa'] = "00000000000000";
             return;
         }
         if(empty($usuario->getLogin()))
