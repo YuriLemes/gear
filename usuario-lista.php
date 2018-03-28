@@ -42,7 +42,7 @@ require_once('UsuarioBO.php');
                                         endif;?>
                                         type="submit"
                                         onclick="return confirm('Confirma a suspensão deste usuário?')"
-                                        formaction="usuario-suspender.php?id=<?=$usuario->getId()?>">
+                                        formaction="usuario-acao-suspender.php?id=<?=$usuario->getId()?>">
                                     <i class="fas fa-minus-square"></i>
                                     <span class="tooltiptext">Suspender</span>
                                 </button>
@@ -55,6 +55,6 @@ require_once('UsuarioBO.php');
     </div>
 </div>
 <div class="container">
-    <input type="button" onclick="window.location.href='usuario-cadastro.php';" class="btn btn-success <?php if(!adminLogado()) echo "disabled" ?>" <?php if(!adminLogado()) echo "disabled" ?> value="Novo"/>
+    <input type="button" onclick="window.location.href='usuario-form-cadastro.php';" class="btn btn-success <?php if(!adminLogado()) echo "disabled" ?>" <?php if(!adminLogado()) echo "disabled" ?>value="Novo"/>
 </div>
 <?php include('footer.php')?>
