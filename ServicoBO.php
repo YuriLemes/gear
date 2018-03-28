@@ -17,13 +17,14 @@ class ServicoBO {
      */
     public static function save(Servico $servico){
         self::validarDadosObrigatorios($servico);
-
+        $cnpj = $_SESSION['login']['cnpj_empresa'];
         $sql = null;
         if(empty($servico->getId())){
             $sql = "INSERT INTO tb_servico (descricao_resumida, descricao_detalhada, cnpj_empresa) VALUES (:desc_resum, :desc_detalhada, :cnpj)";
         }else{
             $sql = "UPDATE tb_servico SET descricao_resumida = :desc_resum, descricao_detalhada = :desc_detalhada WHERE id = :id AND cnpj_empresa = :cnpj";
         }
+
         $db = db_connect();
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':desc_resum', $servico->getDescricaoResumida());
@@ -32,7 +33,7 @@ class ServicoBO {
         if(!empty($servico->getId())){
             $stmt->bindParam('id', $servico->getId());
         }
-
+        
         $stmt->execute();
 
     }

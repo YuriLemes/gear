@@ -1,7 +1,7 @@
 <?php include('header.php');?>
 <div class="containerprincipal">
 	<h5>Cadastro de Serviço</h5>
-	<form method="post" class="form-inline" role="form" action="cadastrar-servico" id="form-servico">
+	<form method="get" class="form-inline" role="form" action="servico-cadastrar" id="form-servico">
 		<div class="containern">
 			<fieldset>
 				<div class="form-group">
@@ -17,7 +17,7 @@
 				</div>
 			</fieldset>
 		</div>
-	</form>
+
 	<p>
 			<span class="error"> 
 				<font>
@@ -25,6 +25,7 @@
 				</font>
 			</span>	
 		</p>
+
 		<div class="containerb centralizar">
 			<fieldset>
 				<button type="button" class="btn btn-primary" id="btn-alterar" ">
