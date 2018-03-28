@@ -1,8 +1,8 @@
 <?php include('header.php');?>
 <div class="containerprincipal">
-	<h5>Alteração de Usuário</h5>
+	<h5>Visualização de Usuário</h5>
 	
-	<form method="post" class="form-inline" role="form" action="alterar-usuario" id="form-usuario">		
+	<form method="post" class="form-inline" role="form" action="alterar-usuario.php" id="form-usuario">		
 		<div class="containern">
 			<fieldset>
 				<div class="form-group">
@@ -19,7 +19,8 @@
 			<fieldset>
 				<div class="form-group">
 					<label for="login">Login:</label>
-					<input type="text" name="clogin" id="login" class="form-control" required maxlength="10" disabled />
+					<input type="text" name="clogin" id="login" class="form-control" required maxlength="10" 
+					 disabled/>
 					<span class="error">
 						*
 					</span>
@@ -71,17 +72,17 @@
 		</p>
 		<div class="containerb centralizar">
 			<fieldset>
-				<button type="button" class="btn btn-primary" id="btn-alterar" disabled>
+				<button type="button" class="btn btn-primary" id="btn-alterar" onclick="window.location.href='usuario-alteracao.php'">
 					<span>
 						<i class="fas fa-edit"></i> Alterar
 					</span>
 				</button>
-				<button type="submit" class="btn btn-success" id="btn-salvar">
+				<button type="submit" class="btn btn-success" id="btn-salvar" disabled>
 					<span>
 						<i class="far fa-save"></i> Salvar
 					</span>
 				</button>
-				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="window.location.href='usuario-lista';">
+				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="window.location.href='usuario-lista.php';">
 					<span>
 						<i class="fas fa-times"></i> Cancelar
 					</span>
