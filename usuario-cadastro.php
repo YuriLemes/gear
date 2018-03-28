@@ -81,7 +81,7 @@
 						<i class="far fa-save"></i> Salvar
 					</span>
 				</button>
-				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="window.location.href='usuario-lista';">
+				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="window.location.href='usuario-lista.php';">
 					<span>
 						<i class="fas fa-times"></i> Cancelar
 					</span>
