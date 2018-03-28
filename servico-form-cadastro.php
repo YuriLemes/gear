@@ -1,7 +1,7 @@
 <?php include('header.php');?>
 <div class="containerprincipal">
 	<h5>Cadastro de Serviço</h5>
-	<form method="get" class="form-inline" role="form" action="servico-acao-cadastrar" id="form-servico">
+	<form method="post" class="form-inline" role="form" action="servico-acao-cadastrar" id="form-servico">
 		<div class="containern">
 			<fieldset>
 				<div class="form-group">

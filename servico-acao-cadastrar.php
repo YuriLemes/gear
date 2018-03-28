@@ -11,8 +11,8 @@ require('conecta_db.php');
 require('Servico.php');
 require('ServicoBO.php');
 
-$descResumida = $_GET['cservico'];
-$descDetalhada = $_GET['tdesc'];
+$descResumida = $_POST['cservico'];
+$descDetalhada = $_POST['tdesc'];
 
 $servico = new Servico();
 $servico->setDescricaoResumida($descResumida);
