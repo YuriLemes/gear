@@ -1,6 +1,8 @@
-<?php include('header.php');
-require_once('UsuarioBO.php');
+<?php
+    include('header.php');
+    require_once('UsuarioBO.php');
     $usuarios = UsuarioBO::findAllActive();
+    include('exibir-erro.php');
 ?>
 
 <div class="container centralizar">

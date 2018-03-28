@@ -11,18 +11,7 @@
 </head>
 <body>
 <?php
-
-    if(!empty($_SESSION['excecao']['mensagem'])) :
-        $msg = $_SESSION['excecao']['mensagem'];
-        unset($_SESSION['excecao']['mensagem']);
-?>
-
-    <div class="alert alert-danger alert-dismissible fade in show">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <?=$msg?>
-    </div>
-<?php
-    endif;
+include('exibir-erro.php');
 ?>
     <div class="login-principal">
         <img src="img/logo.png" alt="logo sistema gear"/>
