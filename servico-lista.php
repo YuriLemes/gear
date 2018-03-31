@@ -25,7 +25,7 @@
                                     <i class="fas fa-eye"></i>
                                     <span class="tooltiptext">Visualizar</span>
                                 </button>
-                                <button class="tooltip btn btn-primary <?php if(!adminLogado()): echo "disabled" ?>" <?php echo "disabled"; endif;?> type="submit" formaction="#">
+                                <button class="tooltip btn btn-primary <?php if(!adminLogado()): echo "disabled" ?>" <?php echo "disabled"; endif;?> type="submit" formaction="servico-form-alteracao.php">
                                     <i class="fas fa-pencil-alt"></i>
                                     <span class="tooltiptext">Alterar</span>
                                 </button>
