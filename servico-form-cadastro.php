@@ -5,14 +5,14 @@
 		<div class="containern">
 			<fieldset>
 				<div class="form-group">
-					<label for="servico">Serviço:</label>
+					<label for="servico">Descrição Resumida:</label>
 					<input type="text" name="cservico" id="servico" class="form-control"  required maxlength="25" />
 					<span class="error">
 						*
 					</span>
 				</div>
 				<div class="form-group">
-					<label for="descricao">Descrição:</label>
+					<label for="descricao">Descrição Detalhada:</label>
 					<textarea name="tdesc" id="cdesc" cols="45" rows="5"  maxlength="250"></textarea>
 				</div>
 			</fieldset>
