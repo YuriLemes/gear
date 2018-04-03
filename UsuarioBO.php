@@ -67,7 +67,9 @@ class UsuarioBO {
         self::validarDadosObrigatorios($usuario);
         $sql = null;
         if(empty($usuario->getId())){
-            $sql = "INSERT INTO tb_usuario (nome, login, senha, perfil, ativo, cnpj_oficina) VALUES (:nome, :login, :senha, :perfil, :ativo, :cnpj_oficina)";
+            $sql = "INSERT INTO tb_usuario (nome, login, senha, perfil, ativo, cnpj_empresa) VALUES (:nome, :login, :senha,:perfil, :ativo, :cnpj_oficina)";
+            echo "Chegou na sql";
+            /*, :perfil, :ativo, :cnpj_oficina*/
         } else {
             $sql = "UPDATE tb_usuario SET nome = :nome, login = :login, senha = :senha, perfil = :perfil, ativo = :ativo, cnpj_empresa = :cnpj_empresa WHERE id = :id";
         }
@@ -177,10 +179,11 @@ class UsuarioBO {
     /**
      * Valida dados obrigatórios do usuário e lança uma SistemaException se algum não estiver preenchido.
      * @param Usuario $usuario
-     * @throws SistemaException
-     */
+     * @throws */
+     
     static function validarDadosObrigatorios(Usuario $usuario){
-        if(empty($usuario->getNome()) || empty($usuario->getLogin()) || empty($usuario->getSenha()) || empty($usuario->getPerfil()) || empty($usuario->getCnpjEmpresa())){
+        if(empty($usuario->getNome()) || empty($usuario->getLogin()) || empty($usuario->getSenha())|| empty($usuario->getPerfil()) || empty($usuario->getCnpjEmpresa())){
+            /*|| empty($usuario->getPerfil()) || empty($usuario->getCnpjEmpresa())*/
             throw new SistemaException("Dados obrigatórios não informados!");
         }
     }
