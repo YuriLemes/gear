@@ -9,10 +9,10 @@
 	<form method="post" class="form-inline" role="form" action="servico-acao-alterar" id="form-servico">
 		<div class="containern">
 			<fieldset>
-				<div>
-					<label>ID:</label>
-					<input type="text" class="disabled" name="id" disabled value="<?= $servico->getId()?>" />
-				</div>
+				<div class="form-group">
+					<label >ID:</label>
+					<input   required maxlength="25" type="text" class="disabled" name="id"  disabled value="<?= $servico->getId()?>" />
+				</div >
 				<div class="form-group">
 					<label for="servico">Descrição Resumida:</label>
 					<input type="text" name="cservico" id="servico" disabled class="form-control disabled"  required maxlength="25" value="<?= $servico->getDescricaoResumida()?>" />
