@@ -12,16 +12,13 @@ $ativo = $_POST['cativo'];
 $perfil = $_POST['cperfil'];
 $cnpj = $_POST['ccnpj'];
 
-
-
-
 $usuario = new Usuario();
 $usuario->setNome($nome);
 $usuario->setLogin($login);
 $usuario->setSenha($senha);
 $usuario->setAtivo($ativo);
 $usuario->setPerfil($perfil);
-$usuario->setCnpjEmpresa($ccnpj);
+$usuario->setCnpjEmpresa($cnpj);
 
 try{
     UsuarioBO::save($usuario);

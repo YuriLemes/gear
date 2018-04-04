@@ -67,8 +67,7 @@ class UsuarioBO {
         self::validarDadosObrigatorios($usuario);
         $sql = null;
         if(empty($usuario->getId())){
-            $sql = "INSERT INTO tb_usuario (nome, login, senha, perfil, ativo, cnpj_empresa) VALUES (:nome, :login, :senha,:perfil, :ativo, :cnpj_oficina)";
-            echo "Chegou na sql";
+            $sql = "INSERT INTO tb_usuario (nome, login, senha, perfil, ativo, cnpj_empresa) VALUES (:nome, :login, :senha,:perfil, :ativo, :cnpj_empresa)";
             /*, :perfil, :ativo, :cnpj_oficina*/
         } else {
             $sql = "UPDATE tb_usuario SET nome = :nome, login = :login, senha = :senha, perfil = :perfil, ativo = :ativo, cnpj_empresa = :cnpj_empresa WHERE id = :id";
