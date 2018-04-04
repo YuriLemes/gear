@@ -51,7 +51,7 @@
 
 				<div class="form-group">
 					<label for="ativo" style="margin-left: 35px;">Ativo:</label>
-					<input type="checkbox" name="cativo" id="ativo" class="form-control" checked="checked" />
+					<input type="checkbox" name="cativo" id="ativo" class="form-control" checked="checked" value="true"/>
 					<span class="error">
 						*
 					</span>

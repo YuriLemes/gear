@@ -63,11 +63,13 @@ class UsuarioBO {
      * Salva um usuário no banco de dados
      * @param Usuario $usuario
      */
-    static function save(Usuario $usuario) {
+    public static function save(Usuario $usuario) {
         self::validarDadosObrigatorios($usuario);
+        $cnpj = $_SESSION['login']['cnpj_empresa'];
         $sql = null;
         if(empty($usuario->getId())){
-            $sql = "INSERT INTO tb_usuario (nome, login, senha, perfil, ativo, cnpj_empresa) VALUES (:nome, :login, :senha,:perfil, :ativo, :cnpj_empresa)";
+            $sql = "INSERT INTO tb_usuario (nome, login, senha, perfil, ativo, cnpj_empresa) VALUES (:nome, :login, :senha, :perfil, :ativo, :cnpj_empresa)";
+            echo "Chegou na SQL";
             /*, :perfil, :ativo, :cnpj_oficina*/
         } else {
             $sql = "UPDATE tb_usuario SET nome = :nome, login = :login, senha = :senha, perfil = :perfil, ativo = :ativo, cnpj_empresa = :cnpj_empresa WHERE id = :id";
@@ -75,17 +77,20 @@ class UsuarioBO {
 
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
-        $stmt->bindParam(':nome', $usuario->getNome());
-        $stmt->bindParam(':login', $usuario->getLogin());
-        $stmt->bindParam(':senha',$usuario->getSenha());
-        $stmt->bindParam(':perfil',$usuario->getPerfil());
-        $stmt->bindParam(':ativo',$usuario->getAtivo());
-        $stmt->bindParam(':cnpj_empresa',$usuario->getCnpjEmpresa());
+        $nome = $usuario->getNome(); $login = $usuario->getLogin(); $senha = $usuario->getSenha();$perfil = $usuario->getPerfil(); $ativo = $usuario->getAtivo();
+        
+        $stmt->bindParam(':nome',$nome);
+        $stmt->bindParam(':login', $login);
+        $stmt->bindParam(':senha',$senha);
+        $stmt->bindParam(':perfil',$perfil);
+        $stmt->bindParam(':ativo',$ativo, PDO::PARAM_BOOL);
+        $stmt->bindParam(':cnpj_empresa',$cnpj);
         if(!empty($usuario->getId())){
-            $stmt->bindParam(':id', $usuario->getId());
+            $id = $usuario->getId();
+            $stmt->bindParam(':id', $id);
         }
-
-        $stmt->execute();
+        echo "Chegou na SQL1";
+        if(!$stmt->execute()) echo "DEU MERDA";
     }
 
     /**
@@ -181,7 +186,7 @@ class UsuarioBO {
      * @throws */
      
     static function validarDadosObrigatorios(Usuario $usuario){
-        if(empty($usuario->getNome()) || empty($usuario->getLogin()) || empty($usuario->getSenha())|| empty($usuario->getPerfil()) || empty($usuario->getCnpjEmpresa())){
+        if(empty($usuario->getNome()) || empty($usuario->getLogin()) || empty($usuario->getSenha())|| empty($usuario->getPerfil()) || empty($usuario->getAtivo())){
             /*|| empty($usuario->getPerfil()) || empty($usuario->getCnpjEmpresa())*/
             throw new SistemaException("Dados obrigatórios não informados!");
         }
