@@ -7,7 +7,7 @@
 <div class="containerprincipal">
 	<h5>Cadastro de Usuário</h5>
 	
-	<form method="post" class="form-inline" role="form" action="cadastrar-usuario" id="form-usuario">		
+	<form method="post" class="form-inline" role="form" action="usuario-acao-cadastrar" id="form-usuario">		
 		<div class="containern">
 			<fieldset>
 				<div class="form-group">
@@ -96,5 +96,3 @@
 	</form>
 </div>
 <?php include('footer.php')?>
-
-

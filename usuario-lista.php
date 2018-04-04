@@ -23,7 +23,7 @@
                         <td><?=$usuario->getPerfil()?></td>
                         <td>
                             <form action="#" method="post">
-                                <button class="tooltip btn btn-info" type="submit" formaction="usuario-visualizacao.php">
+                                <button class="tooltip btn btn-info" type="submit" formaction="usuario-form-visualizacao.php">
                                     <i class="fas fa-eye"></i>
                                     <span class="tooltiptext">Visualizar</span>
                                 </button>
