@@ -16,9 +16,7 @@
 				<div class="form-group">
 					<label for="servico">Descrição Resumida:</label>
 					<input type="text" name="cservico" id="servico" disabled class="form-control disabled"  required maxlength="25" value="<?= $servico->getDescricaoResumida()?>" />
-					<span class="error">
-						*
-					</span>
+					
 				</div>
 				<div class="form-group">
 					<label for="descricao">Descrição Detalhada:</label>
@@ -27,13 +25,6 @@
 			</fieldset>
 		</div>
 
-	<p>
-			<span class="error"> 
-				<font>
-					*Campos Obrigatórios
-				</font>
-			</span>	
-		</p>
 	</form>
 
 		<div class="containerb centralizar">
