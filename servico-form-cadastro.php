@@ -4,6 +4,10 @@
 	<form method="post" class="form-inline" role="form" action="servico-acao-cadastrar" id="form-servico">
 		<div class="containern">
 			<fieldset>
+				<div>
+					<label>ID:</label>
+					<input type="text" class="disabled" disabled name="id"/>
+				</div>
 				<div class="form-group">
 					<label for="servico">Descrição Resumida:</label>
 					<input type="text" name="cservico" id="servico" class="form-control"  required maxlength="25" />
@@ -18,7 +22,7 @@
 			</fieldset>
 		</div>
 
-	<p>
+		<p>
 			<span class="error"> 
 				<font>
 					*Campos Obrigatórios
@@ -28,11 +32,6 @@
 
 		<div class="containerb centralizar">
 			<fieldset>
-				<button type="button" class="btn btn-primary" id="btn-alterar" ">
-					<span>
-						<i class="fas fa-edit"></i> Alterar
-					</span>
-				</button>
 				<button type="submit" class="btn btn-success" id="btn-salvar">
 					<span>
 						<i class="far fa-save"></i> Salvar

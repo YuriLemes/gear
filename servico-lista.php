@@ -21,11 +21,11 @@
                         <td><?=$servico->getDescricaoResumida()?></td>
                         <td>
                             <form action="#" method="post">
-                                <button class="tooltip btn btn-info" type="submit" formaction="#">
+                                <button class="tooltip btn btn-info" type="submit" formaction="servico-form-visualizacao.php?id=<?=$servico->getId()?>">
                                     <i class="fas fa-eye"></i>
                                     <span class="tooltiptext">Visualizar</span>
                                 </button>
-                                <button class="tooltip btn btn-primary <?php if(!adminLogado()): echo "disabled" ?>" <?php echo "disabled"; endif;?> type="submit" formaction="servico-form-alteracao.php">
+                                <button class="tooltip btn btn-primary <?php if(!adminLogado()): echo "disabled" ?>" <?php echo "disabled"; endif;?> type="submit" formaction="servico-form-alteracao.php?id=<?=$servico->getId()?>">
                                     <i class="fas fa-pencil-alt"></i>
                                     <span class="tooltiptext">Alterar</span>
                                 </button>

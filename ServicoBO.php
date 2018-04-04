@@ -69,6 +69,21 @@ class ServicoBO {
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Servico');
     }
 
+/**
+     * Retorna um serviço da base de dados com o id passado, para a empresa atual;
+     * @return array
+     */
+    public static function findById($id){
+        $cnpj = $_SESSION['login']['cnpj_empresa'];
+        $sql = "SELECT id, descricao_resumida, descricao_detalhada, cnpj_empresa FROM tb_servico WHERE id = :id AND cnpj_empresa = :cnpj_empresa ORDER BY descricao_resumida";
+        $DB = db_connect();
+        $stmt = $DB->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':cnpj_empresa', $cnpj);
+        $stmt->execute();
+        $servicos=$stmt->fetchAll(PDO::FETCH_CLASS, 'Servico');
+        return $servicos[0];
+    }
     /**
      * Valida dados de preenchimento obrigatório.
      * @param Servico $servico

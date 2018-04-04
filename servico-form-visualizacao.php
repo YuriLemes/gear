@@ -11,18 +11,18 @@
 			<fieldset>
 				<div>
 					<label>ID:</label>
-					<input type="text" class="disabled" name="id" value="<?= $servico->getId()?>" />
+					<input type="text" class="disabled" name="id" disabled value="<?= $servico->getId()?>" />
 				</div>
 				<div class="form-group">
 					<label for="servico">Descrição Resumida:</label>
-					<input type="text" name="cservico" id="servico" class="form-control"  required maxlength="25" value="<?= $servico->getDescricaoResumida()?>" />
+					<input type="text" name="cservico" id="servico" disabled class="form-control disabled"  required maxlength="25" value="<?= $servico->getDescricaoResumida()?>" />
 					<span class="error">
 						*
 					</span>
 				</div>
 				<div class="form-group">
 					<label for="descricao">Descrição Detalhada:</label>
-					<textarea name="tdesc" id="cdesc" cols="45" rows="5" maxlength="250"><?= $servico->getDescricaoDetalhada()?></textarea>
+					<textarea name="tdesc disabled" id="cdesc" cols="45" rows="5" disabled maxlength="250"><?= $servico->getDescricaoDetalhada()?></textarea>
 				</div>
 			</fieldset>
 		</div>
@@ -34,12 +34,13 @@
 				</font>
 			</span>	
 		</p>
+	</form>
 
 		<div class="containerb centralizar">
 			<fieldset>
-				<button type="submit" class="btn btn-primary" id="btn-salvar" ">
+				<button type="button" class="btn btn-primary" id="btn-salvar" onclick="window.location.href='servico-form-alteracao.php?id=<?=$servico->getId()?>';">
 					<span>
-						<i class="fas fa-edit"></i> Salvar
+						<i class="fas fa-edit"></i> Alterar
 					</span>
 				</button>
 
@@ -50,6 +51,6 @@
 				</button>
 			</fieldset>
 		</div>
-	</form>
+	
 </div>
 	<?php include('footer.php')?>
