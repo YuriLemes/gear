@@ -30,7 +30,7 @@
 				<div class="form-group">
 					<label for="perfil">Perfil:</label>
 					<select id="perfil" class="form-control" required name="cperfil">
-						<option selected readonly="readonly"> Escolha uma opção:</option>
+						<option selected disabled> Escolha uma opção:</option>
 						<option>ADMIN</option>
 						<option>USUARIO</option>
 					</select>
@@ -61,7 +61,7 @@
 			<fieldset>
 				<div class="form-group">
 					<label for="cnpj">CNPJ Empresa: </label>
-					<input type="text" name="ccnpj" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>" <?php if($cnpj_empresa != '00000000000000' && $login != 'gear') echo ''?> placeholder="00.000.000/0000-00" class="form-control" maxlength="14" readonly="readonly"/>
+					<input type="text" name="ccnjp" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>"   placeholder="00.000.000/0000-00" class="form-control" maxlength="14" readonly="readonly" />
 				</div>
 			</fieldset>
 		</div>
