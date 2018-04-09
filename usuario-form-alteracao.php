@@ -1,4 +1,10 @@
-<?php include('header.php');?>
+<?php 
+include('header.php');
+require ('UsuarioBO.php');
+$id = $_GET['id'];
+$usuario= UsuarioBO::findById($id);
+
+?>
 <div class="containerprincipal">
 	<h5>Alteração de Usuário</h5>
 	
@@ -27,7 +33,7 @@
 				<div class="form-group">
 					<label for="perfil">Perfil:</label>
 					<select id="perfil" class="form-control" required name="cperfil"  >
-						<option selected  > Escolha uma opção:</option>
+						<option selected disabled > Escolha uma opção:</option>
 						<option>Administrador</option>
 						<option>Funcionário</option>
 					</select>

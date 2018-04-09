@@ -20,9 +20,8 @@ $usuario->setPerfil($perfil);
 
 try{
     UsuarioBO::save($usuario);
-    echo "chegou no try";
-
+    
 }catch (Exception $exception){
     $_SESSION['excecao']['mensagem'] = $exception->getMessage();
 }
-//header('Location: usuario-lista');
+header('Location: usuario-lista');

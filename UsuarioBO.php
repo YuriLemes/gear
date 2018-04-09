@@ -157,10 +157,25 @@ class UsuarioBO {
      * Valida dados obrigatórios do usuário e lança uma SistemaException se algum não estiver preenchido.
      * @param Usuario $usuario
      * @throws */
-    
+
     static function validarDadosObrigatorios(Usuario $usuario){
         if(empty($usuario->getNome()) || empty($usuario->getLogin()) || empty($usuario->getSenha())|| empty($usuario->getPerfil()) || empty($usuario->getAtivo())){
             throw new SistemaException("Dados obrigatórios não informados!");
         }
+    }
+    /**
+     * Retorna um usuario da base de dados com o id passado, para a empresa atual;
+     * @return array
+     */
+    public static function findById($id){
+        $cnpj = $_SESSION['login']['cnpj_empresa'];
+        $sql = "SELECT id, nome, senha, perfil, ativo FROM tb_usuario WHERE id = :id AND cnpj_empresa = :cnpj_empresa ORDER BY nome";
+        $DB = db_connect();
+        $stmt = $DB->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':cnpj_empresa', $cnpj);
+        $stmt->execute();
+        $usuarios=$stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
+        return $usuarios[0];
     }
 }

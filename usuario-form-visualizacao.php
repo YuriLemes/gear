@@ -1,11 +1,20 @@
 <?php 
 include('header.php');
+require ('UsuarioBO.php');
+$id = $_GET['id'];
+$usuario= UsuarioBO::findById($id);
+
 ?>
 <div class="containerprincipal">
 	<h5>Visualização de Usuário</h5>
 	
 	<form method="post" class="form-inline" role="form" action="alterar-usuario.php" id="form-usuario">		
 		<div class="containern">
+			<fieldset>
+				<div class="form-group">
+					<label >ID:</label>
+					<input   required maxlength="25" type="text" class="form-control" name="id" readonly="readonly"> value="<?= $usuario->getId()?>" />
+				</div >
 			<fieldset>
 				<div class="form-group">
 					<label for="nome">Nome:</label>

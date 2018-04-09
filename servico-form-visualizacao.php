@@ -6,7 +6,7 @@
 ?>
 <div class="containerprincipal">
 	<h5>Alteração de Serviço</h5>
-	<form method="post" class="form-inline" role="form" action="servico-acao-alterar" id="form-servico">
+	<form method="get" class="form-inline" role="form" action="servico-acao-alterar" id="form-servico">
 		<div class="containern">
 			<fieldset>
 				<div class="form-group">
