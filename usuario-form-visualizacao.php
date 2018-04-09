@@ -13,12 +13,13 @@ $usuario= UsuarioBO::findById($id);
 			<fieldset>
 				<div class="form-group">
 					<label >ID:</label>
-					<input   required maxlength="25" type="text" class="form-control" name="id" readonly="readonly"> value="<?= $usuario->getId()?>" />
+					<input   required maxlength="25" type="text" class="form-control" name="id" disabled value="<?=$id?>" />
 				</div >
 			<fieldset>
 				<div class="form-group">
 					<label for="nome">Nome:</label>
-					<input type="text" name="cnome" id="nome" class="form-control"  required maxlength="60" readonly="readonly" value="<?= $usuario->getNome()?>" />
+					<input type="text" name="cnome" id="nome" class="form-control"  required maxlength="60" disabled 
+					value="<?= $usuario->getNome()?>" />
 					<span class="error">
 						*
 					</span>
@@ -31,17 +32,17 @@ $usuario= UsuarioBO::findById($id);
 				<div class="form-group">
 					<label for="login">Login:</label>
 					<input type="text" name="clogin" id="login" class="form-control" required maxlength="10" 
-					readonly="readonly" value="><?= $usuario->getLogin()?>"/>
+					disabled value="<?=$usuario->getLogin()?>"/>
 					<span class="error">
 						*
 					</span>
 				</div>
 				<div class="form-group">
 					<label for="perfil">Perfil:</label>
-					<select id="perfil" class="form-control" required name="cperfil" readonly="readonly" value="<?= $usuario->getPerfil()?>">
-						<option selected disabled> Escolha uma opção:</option>
-						<option>Administrador</option>
-						<option>Funcionário</option>
+					<select id="perfil" class="form-control" required name="cperfil" disabled>
+					
+						<option><?=$usuario->getPerfil()?></option>
+						
 					</select>
 					<span class="error">
 						*
@@ -53,13 +54,13 @@ $usuario= UsuarioBO::findById($id);
 			<fieldset>
 				<div class="form-group">
 					<label for="senha" style="margin-left: 37px;">Senha:</label>
-					<input type="password" name="csenha" id="senha-usuario" class="form-control" maxlength="5" readonly="readonly" value="<?= 
+					<input type="password" name="csenha" id="senha-usuario" class="form-control" maxlength="5" disabled value="<?= 
 					$usuario->getSenha()?>" />
 				</div>
 
 				<div class="form-group">
 					<label for="ativo" style="margin-left: 35px;">Ativo:</label>
-					<input type="checkbox" name="cativo" id="ativo" class="form-control" checked="checked" readonly="readonly" value="<?= $usuario->getAtivo()?>" />
+					<input type="checkbox" name="cativo" id="ativo" class="form-control" checked="checked" disabled value="<?= $usuario->getAtivo()?>" />
 					<span class="error">
 						*
 					</span>
@@ -71,7 +72,7 @@ $usuario= UsuarioBO::findById($id);
 			<fieldset>
 				<div class="form-group">
 					<label for="cnpj">CNPJ Empresa: </label>
-					<input type="text" name="ccnjp" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>" readonly="readonly" placeholder="00.000.000/0000-00" class="form-control" maxlength="14" />
+					<input type="text" name="ccnjp" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>" disabled placeholder="00.000.000/0000-00" class="form-control" maxlength="14" />
 				</div>
 			</fieldset>
 		</div>

@@ -47,6 +47,7 @@ class UsuarioBO {
         $_SESSION['login']['usuario'] = $user->getLogin();
         $_SESSION['login']['cnpj_empresa'] = $user->getCnpjEmpresa();
     }
+    
     /**
      * Salva um usuário no banco de dados
      * @param Usuario $usuario
@@ -60,20 +61,26 @@ class UsuarioBO {
         } else {
             $sql = "UPDATE tb_usuario SET nome = :nome, login = :login, senha = :senha, perfil = :perfil, ativo = :ativo, cnpj_empresa = :cnpj_empresa WHERE id = :id";
         }
-        $DB = db_connect();
-        $stmt = $DB->prepare($sql);
-        $nome = $usuario->getNome(); $login = $usuario->getLogin(); $senha = $usuario->getSenha();$perfil = $usuario->getPerfil(); $ativo = $usuario->getAtivo();
+        $db = db_connect();
+        $stmt = $db->prepare($sql);
+        $nome = $usuario->getNome(); 
+        $login = $usuario->getLogin(); 
+        $senha = $usuario->getSenha();
+        $perfil = $usuario->getPerfil(); 
+        $ativo = $usuario->getAtivo();
         
-        $stmt->bindParam(':nome',$nome);
+        $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':login', $login);
         $stmt->bindParam(':senha',$senha);
         $stmt->bindParam(':perfil',$perfil);
-        $stmt->bindParam(':ativo',$ativo, PDO::PARAM_BOOL);
+        $stmt->bindParam(':ativo', $ativo);
         $stmt->bindParam(':cnpj_empresa',$cnpj);
         if(!empty($usuario->getId())){
             $id = $usuario->getId();
             $stmt->bindParam(':id', $id);
         }
+        
+        return $stmt->execute();
     }
     /**
      * Remove um usuário da base de dados.
@@ -169,7 +176,7 @@ class UsuarioBO {
      */
     public static function findById($id){
         $cnpj = $_SESSION['login']['cnpj_empresa'];
-        $sql = "SELECT id, nome, senha, perfil, ativo FROM tb_usuario WHERE id = :id AND cnpj_empresa = :cnpj_empresa ORDER BY nome";
+        $sql = "SELECT id, nome, login, senha, perfil, ativo FROM tb_usuario WHERE id = :id AND cnpj_empresa = :cnpj_empresa ORDER BY nome";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':id', $id);

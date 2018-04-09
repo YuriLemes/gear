@@ -16,12 +16,14 @@ $usuario->setNome($nome);
 $usuario->setLogin($login);
 $usuario->setSenha($senha);
 $usuario->setAtivo($ativo);
+// ATIVO DEVE SER VALOR 0 ou 1 não true
 $usuario->setPerfil($perfil);
 
 try{
     UsuarioBO::save($usuario);
     
 }catch (Exception $exception){
+   
     $_SESSION['excecao']['mensagem'] = $exception->getMessage();
 }
 header('Location: usuario-lista');

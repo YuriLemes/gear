@@ -3,7 +3,7 @@
 ?>
 
 <div class="containerprincipal">
-	<h5>Cadastro de Usuário</h5>
+	<h5>Cadastro de Usuário OBS -> ATIVO DEVE SER VALOR 0 ou 1 kkk</h5>
 	
 	<form method="post" class="form-inline" role="form" action="usuario-acao-cadastrar" id="form-usuario">		
 		<div class="containern">
@@ -48,7 +48,7 @@
 				</div>
 
 				<div class="form-group">
-					<label for="ativo" style="margin-left: 35px;">Ativo:</label>
+					<label for="ativo" style="margin-left: 35px;">Ativo: </label>
 					<input type="checkbox" name="cativo" id="ativo" class="form-control" checked="checked" value="true"/>
 					<span class="error">
 						*
