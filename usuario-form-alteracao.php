@@ -1,15 +1,13 @@
-<?php 
-include('header.php');
-?>
+<?php include('header.php');?>
 <div class="containerprincipal">
-	<h5>Visualização de Usuário</h5>
+	<h5>Alteração de Usuário</h5>
 	
-	<form method="post" class="form-inline" role="form" action="alterar-usuario.php" id="form-usuario">		
+	<form method="post" class="form-inline" role="form" action="alterar-usuario" id="form-usuario">		
 		<div class="containern">
 			<fieldset>
 				<div class="form-group">
 					<label for="nome">Nome:</label>
-					<input type="text" name="cnome" id="nome" class="form-control"  required maxlength="60" readonly="readonly" value="<?= $usuario->getNome()?>" />
+					<input type="text" name="cnome" id="nome" class="form-control"  required maxlength="60"   />
 					<span class="error">
 						*
 					</span>
@@ -21,16 +19,15 @@ include('header.php');
 			<fieldset>
 				<div class="form-group">
 					<label for="login">Login:</label>
-					<input type="text" name="clogin" id="login" class="form-control" required maxlength="10" 
-					readonly="readonly" value="><?= $usuario->getLogin()?>"/>
+					<input type="text" name="clogin" id="login" class="form-control" required maxlength="10"   />
 					<span class="error">
 						*
 					</span>
 				</div>
 				<div class="form-group">
 					<label for="perfil">Perfil:</label>
-					<select id="perfil" class="form-control" required name="cperfil" readonly="readonly" value="<?= $usuario->getPerfil()?>">
-						<option selected disabled> Escolha uma opção:</option>
+					<select id="perfil" class="form-control" required name="cperfil"  >
+						<option selected  > Escolha uma opção:</option>
 						<option>Administrador</option>
 						<option>Funcionário</option>
 					</select>
@@ -44,13 +41,12 @@ include('header.php');
 			<fieldset>
 				<div class="form-group">
 					<label for="senha" style="margin-left: 37px;">Senha:</label>
-					<input type="password" name="csenha" id="senha-usuario" class="form-control" maxlength="5" readonly="readonly" value="<?= 
-					$usuario->getSenha()?>" />
+					<input type="password" name="csenha" id="senha-usuario" class="form-control" maxlength="5"   />
 				</div>
 
 				<div class="form-group">
 					<label for="ativo" style="margin-left: 35px;">Ativo:</label>
-					<input type="checkbox" name="cativo" id="ativo" class="form-control" checked="checked" readonly="readonly" value="<?= $usuario->getAtivo()?>" />
+					<input type="checkbox" name="cativo" id="ativo" class="form-control" checked="checked"   />
 					<span class="error">
 						*
 					</span>
@@ -62,7 +58,7 @@ include('header.php');
 			<fieldset>
 				<div class="form-group">
 					<label for="cnpj">CNPJ Empresa: </label>
-					<input type="text" name="ccnjp" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>" readonly="readonly" placeholder="00.000.000/0000-00" class="form-control" maxlength="14" />
+					<input type="text" name="ccnjp" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>"   placeholder="00.000.000/0000-00" class="form-control" maxlength="14" readonly="readonly" />
 				</div>
 			</fieldset>
 		</div>
@@ -75,21 +71,21 @@ include('header.php');
 		</p>
 		<div class="containerb centralizar">
 			<fieldset>
-				<button type="button" class="btn btn-primary" id="btn-alterar" onclick="window.location.href='usuario-form-alteracao.php'">
+				<button type="button" class="btn btn-primary" id="btn-alterar" disabled >
 					<span>
 						<i class="fas fa-edit"></i> Alterar
 					</span>
 				</button>
-				<button type="submit" class="btn btn-success" id="btn-salvar" disabled>
+				<button type="submit" class="btn btn-success" id="btn-salvar">
 					<span>
 						<i class="far fa-save"></i> Salvar
 					</span>
 				</button>
-				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="window.location.href='usuario-lista.php';">
+				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="window.location.href='usuario-lista';">
 					<span>
 						<i class="fas fa-times"></i> Cancelar
 					</span>
-				</button>
+                </button>
 			</fieldset>
 		</div>
 	</form>

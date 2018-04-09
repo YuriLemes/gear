@@ -31,7 +31,7 @@
                                     <?php
                                         if(!adminLogado() && $_SESSION['login']['usuario'] != $usuario->getLogin()):
                                             echo "disabled" ?>" <?php echo "disabled";
-                                        endif;?> type="submit" formaction="usuario-alteracao.php">
+                                        endif;?> type="submit" formaction="usuario-form-alteracao.php">
                                     <i class="fas fa-pencil-alt"></i>
                                     <span class="tooltiptext">Alterar</span>
                                 </button>
