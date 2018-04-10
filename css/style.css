@@ -153,7 +153,8 @@ h5{
     min-width: 700px;
 }
 .containerc{
-    min-width: 700px;
+    padding-top: 5px;
+    max-width: 350px;
     padding-left: 40px;
 }
 
@@ -195,6 +196,9 @@ h5{
 }
 #ativo{
     margin-left: 18px;
+}
+#id{
+    margin-left: 12px;
 }
 .btn-warning{
     color: white;
