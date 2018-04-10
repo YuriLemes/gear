@@ -5,7 +5,8 @@
     include('exibir-erro.php');
 ?>
 
-<div class="container centralizar">
+<div class="container">
+    <h1>Lista de Usuários</h1>
   <table class="table-fixed table table-striped table-bordered">
             <thead>
                 <tr>
@@ -31,7 +32,7 @@
                                     <?php
                                         if(!adminLogado() && $_SESSION['login']['usuario'] != $usuario->getLogin()):
                                             echo "disabled" ?>" <?php echo "disabled";
-                                        endif;?> type="submit" formaction="usuario-form-alteracao.php">
+                                        endif;?> type="submit" formaction="usuario-form-alteracao.php?id=<?=$usuario->getId()?>">
                                     <i class="fas fa-pencil-alt"></i>
                                     <span class="tooltiptext">Alterar</span>
                                 </button>
@@ -57,6 +58,12 @@
     </div>
 </div>
 <div class="container">
-    <input type="button" onclick="window.location.href='usuario-form-cadastro.php';" class="btn btn-success <?php if(!adminLogado()) echo "disabled" ?>" <?php if(!adminLogado()) echo "disabled" ?>value="Novo"/>
-</div>
+    <input type="button"  value="Novo" onclick="window.location.href='usuario-form-cadastro.php';" class="btn btn-success 
+    <?php 
+        if(!adminLogado()):
+            echo"disabled";?> " <?php echo"disabled";
+        else:
+            ?> " 
+        <?php endif;?> />
+</div> 
 <?php include('footer.php')?>
