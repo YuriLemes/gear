@@ -23,7 +23,7 @@ $usuario= UsuarioBO::findById($id);
 			<div class="containerc" style="padding-left: 69px;">
 				<div class="form-group">
 					<label for="cnpj">CNPJ Empresa: </label>
-					<input type="text" name="ccnpj" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>" readyonly="readyonly" placeholder="00.000.000/0000-00" class="form-control" maxlength="14" />
+					<input type="text" name="ccnpj" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>" placeholder="00.000.000/0000-00" class="form-control" maxlength="14" readonly="readonly"/>
 				</div>
 			</fieldset>
 		</div>
