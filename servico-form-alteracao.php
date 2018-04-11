@@ -7,10 +7,10 @@
 <div class="containerprincipal">
 	<h5>Alteração de Serviço</h5>
 	<form method="post" class="form-inline" role="form" action="servico-acao-alterar" id="form-servico">
-		<div class="containern">
+		<div class="containerg">
 			<fieldset>
 				<div class="form-group">
-					<label>ID:</label>
+					<label for="id">ID:</label>
 					<input   required maxlength="5" type="text" class="form-control" name="id" id="id" readonly="readonly"  value="<?= $servico->getId()?>" />
 				</div>
 				<div class="form-group">

@@ -2,7 +2,7 @@
 <div class="containerprincipal">
 	<h5>Cadastro de Serviço</h5>
 	<form method="post" class="form-inline" role="form" action="servico-acao-cadastrar" id="form-servico">
-		<div class="containern">
+		<div class="containerg">
 			<fieldset>
 				<div class="form-group">
 					<label>ID:</label>

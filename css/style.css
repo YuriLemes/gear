@@ -228,6 +228,15 @@ span.error{
 
 /*INÍCIO ESTILO SERVIÇO */
 
+#id{
+    margin-left: 14px;
+}
+.containerg{
+    width: 650px;
+    margin-left: 30px;
+    padding-left: 40px;
+    padding-bottom: 0px;
+}
 #servico{
     width: 400px;
     margin-left: 30px;
