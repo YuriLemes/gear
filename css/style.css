@@ -229,7 +229,7 @@ span.error{
 /*INÍCIO ESTILO SERVIÇO */
 
 #id{
-    margin-left: 14px;
+    margin-left: 30px;
 }
 .containerg{
     width: 650px;
@@ -240,6 +240,7 @@ span.error{
 #servico{
     width: 400px;
     margin-left: 30px;
+    margin-right: 5px;
 
 }
 
