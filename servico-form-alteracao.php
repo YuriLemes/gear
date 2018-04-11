@@ -9,9 +9,9 @@
 	<form method="post" class="form-inline" role="form" action="servico-acao-alterar" id="form-servico">
 		<div class="containern">
 			<fieldset>
-				<div>
+				<div class="form-group">
 					<label>ID:</label>
-					<input type="text" class="disabled" name="id" value="<?= $servico->getId()?>" />
+					<input   required maxlength="5" type="text" class="form-control" name="id" id="id" readonly="readonly"  value="<?= $servico->getId()?>" />
 				</div>
 				<div class="form-group">
 					<label for="servico">Descrição Resumida:</label>
@@ -37,9 +37,9 @@
 
 		<div class="containerb centralizar">
 			<fieldset>
-				<button type="submit" class="btn btn-primary" id="btn-salvar" ">
+				<button type="submit" class="btn btn-success" id="btn-salvar">
 					<span>
-						<i class="fas fa-edit"></i> Salvar
+						<i class="far fa-save"></i> Salvar
 					</span>
 				</button>
 

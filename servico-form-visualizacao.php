@@ -11,7 +11,7 @@
 			<fieldset>
 				<div class="form-group">
 					<label >ID:</label>
-					<input   required maxlength="25" type="text" class="disabled" name="id"  disabled value="<?= $servico->getId()?>" />
+					<input   required maxlength="5" type="text" class="form-control" name="id"  disabled value="<?= $servico->getId()?>" />
 				</div >
 				<div class="form-group">
 					<label for="servico">Descrição Resumida:</label>
@@ -29,9 +29,9 @@
 
 		<div class="containerb centralizar">
 			<fieldset>
-				<button type="button" class="btn btn-primary" id="btn-salvar" onclick="window.location.href='servico-form-alteracao.php?id=<?=$servico->getId()?>';">
+				<button type="button" class="btn btn-success" id="btn-salvar" onclick="window.location.href='servico-form-alteracao.php?id=<?=$servico->getId()?>';">
 					<span>
-						<i class="fas fa-edit"></i> Alterar
+						<i class="far fa-save"></i> Alterar
 					</span>
 				</button>
 

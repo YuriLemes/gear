@@ -4,9 +4,9 @@
 	<form method="post" class="form-inline" role="form" action="servico-acao-cadastrar" id="form-servico">
 		<div class="containern">
 			<fieldset>
-				<div>
+				<div class="form-group">
 					<label>ID:</label>
-					<input type="text" class="disabled" disabled name="id"/>
+					<input   required maxlength="5" type="text" class="form-control" name="id" id="id" disabled >
 				</div>
 				<div class="form-group">
 					<label for="servico">Descrição Resumida:</label>
