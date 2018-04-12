@@ -43,7 +43,7 @@
 					</span>
 				</button>
 
-				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="cancelar()">
+				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="cancelar('servico-lista')">
 					<span>
 						<i class="fas fa-times"></i> Cancelar
 					</span>

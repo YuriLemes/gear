@@ -100,7 +100,7 @@ $usuario= UsuarioBO::findById($id);
 					</span>
 				</button>
 				<button  class="btn btn-danger" id="btn-cancelar" type="button"
-				onclick="cancelar()">
+				onclick="cancelar('usuario-lista')">
 				<span>
 					<i class="fas fa-times"></i> Cancelar
 				</span>

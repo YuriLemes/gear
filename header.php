@@ -20,10 +20,10 @@ if(!estaLogado()){
     <script defer src="js/fontawesome-all.js"></script>
     <title>Gear V1.0</title>
     <script>
-        function cancelar() {
+        function cancelar($pagina) {
             var result = confirm("Confirma cancelar a operação?");
             if (result == true) {
-                window.location.replace('usuario-lista');
+                window.location.replace($pagina);
             } 
         }
     </script>

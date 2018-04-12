@@ -31,6 +31,7 @@ CREATE TABLE `tb_cliente` (
   `numero_endereco` varchar(5)  DEFAULT NULL,
   `complemento` varchar(100) DEFAULT NULL,
   `cidade` varchar(60)  DEFAULT NULL,
+  `estado` varchar(2) DEFAULT NULL,
   `setor` varchar(100)  DEFAULT NULL,
   `cep` varchar(8)  DEFAULT NULL,
   `telefone_fixo` varchar(11)  DEFAULT NULL,
@@ -44,8 +45,8 @@ CREATE TABLE `tb_cliente` (
 -- ----------------------------
 -- Records of tb_cliente
 -- ----------------------------
-INSERT INTO `tb_cliente` VALUES ('1', '2018-04-11', null, 'JOAO NASCIMENTO', 'JOAO NASCIMENTO LTDA ME', '99999999000191', 'ISENTO', 'RUA DOS EUCALIPTOS', 'S/N', 'QD.55 LT.23', 'ANÁPOLIS', 'CENTRO', '75000000', '6233333333', '6299999999', 'contato@contato.com', 'TESTE', '10720580000180');
-INSERT INTO `tb_cliente` VALUES ('2', '2018-04-11', null, 'ZECA BATISTA', 'ZECA BATISTA EIRELLI ME', '99989999000191', 'ISENTO', 'RUA DAS MANGUEIRAS', '55', 'BLOCO E, APT.105', 'ANÁPOLIS', 'CENTRO', '75000000', '6244444444', '6288888888', 'contato@conosco.com', 'TESTE', '01234567890123');
+INSERT INTO `tb_cliente` VALUES ('1', '2018-04-11', null, 'JOAO NASCIMENTO', 'JOAO NASCIMENTO LTDA ME', '99999999000191', 'ISENTO', 'RUA DOS EUCALIPTOS', 'S/N', 'QD.55 LT.23', 'ANÁPOLIS', 'GO', 'CENTRO', '75000000', '6233333333', '6299999999', 'contato@contato.com', 'TESTE', '10720580000180');
+INSERT INTO `tb_cliente` VALUES ('2', '2018-04-11', null, 'ZECA BATISTA', 'ZECA BATISTA EIRELLI ME', '99989999000191', 'ISENTO', 'RUA DAS MANGUEIRAS', '55', 'BLOCO E, APT.105', 'ANÁPOLIS', 'GO', 'CENTRO', '75000000', '6244444444', '6288888888', 'contato@conosco.com', 'TESTE', '01234567890123');
 
 -- ----------------------------
 -- Table structure for tb_servico

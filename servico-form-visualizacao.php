@@ -29,13 +29,13 @@
 
 		<div class="containerb centralizar">
 			<fieldset>
-				<button type="button" class="btn btn-success" id="btn-salvar" onclick="window.location.href='servico-form-alteracao.php?id=<?=$servico->getId()?>';">
+				<button type="button" class="btn btn-primary" id="btn-salvar" onclick="window.location.href='servico-form-alteracao.php?id=<?=$servico->getId()?>';">
 					<span>
-						<i class="far fa-save"></i> Salvar
+						<i class="far fa-save"></i> Alterar
 					</span>
 				</button>
 
-				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="cancelar()">
+				<button type="button" class="btn btn-danger" id="btn-cancelar" onclick="window.location.replace('servico-lista')">
 					<span>
 						<i class="fas fa-times"></i> Cancelar
 					</span>

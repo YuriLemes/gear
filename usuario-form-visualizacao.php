@@ -9,7 +9,7 @@ $usuario= UsuarioBO::findById($id);
 
 	<h5>Visualização de Usuário</h5>
 	
-	<form method="post" class="form-inline" role="form" action="alterar-usuario.php" id="form-usuario">		
+	<form method="post" class="form-inline" role="form" action="#" id="form-usuario">		
 
 		<div class="containerc">
 			<fieldset>
@@ -69,12 +69,13 @@ $usuario= UsuarioBO::findById($id);
 	</div>	
 	<div class="containerb centralizar" style="padding-top: 40px;">
 		<fieldset>
-			<button class="btn btn-primary" id="btn-alterar"    <?php
-			if(!adminLogado() && $_SESSION['login']['usuario'] != $usuario->getLogin()):
-				echo "disabled" ?>" <?php echo "disabled";
+			<button id="btn-alterar" class="btn btn-primary
+			<?php
+			     if(!adminLogado() && $_SESSION['login']['usuario'] != $usuario->getLogin()):
+				    echo "disabled" ?>" <?php echo "disabled";
 				endif;?> type="submit" formaction="usuario-form-alteracao.php?id=<?=$usuario->getId()?>">
 				<span>
-					<i class="fas fa-edit"></i> Alterar
+					<i class="fas fa-edit"></i>Alterar
 				</span>
 			</button>
 			<button type="button" class="btn btn-success" id="btn-salvar" disabled>
@@ -82,9 +83,8 @@ $usuario= UsuarioBO::findById($id);
 					<i class="far fa-save"></i> Salvar
 				</span>
 			</button>
-			<button  class="btn btn-danger" id="btn-cancelar" type="submit"
-			onclick="return confirm('Deseja cancelar a operação?')"
-			formaction="usuario-lista.php">
+			<button  class="btn btn-danger" id="btn-cancelar" type="button"
+			onclick="window.location.replace('usuario-lista')">
 			<span>
 				<i class="fas fa-times"></i> Cancelar
 			</span>

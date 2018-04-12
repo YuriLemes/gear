@@ -101,7 +101,7 @@ require ('UsuarioBO.php');
 							</span>
 						</button>
 					</button>
-					<button  class="btn btn-danger" id="btn-cancelar" type="button" onclick="cancelar()">
+					<button  class="btn btn-danger" id="btn-cancelar" type="button" onclick="cancelar('usuario-lista')">
 
 						<span>
 							<i class="fas fa-times"></i> Cancelar
