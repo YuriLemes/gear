@@ -19,9 +19,9 @@ class ClienteBO{
         $cnpj = $_SESSION['login']['cnpj_empresa'];
         $sql = null;
         if(empty($cliente->getId())){
-            $sql = "INSERT INTO tb_cliente (data_cadastro, data_suspenso, nome, razao_social, cpf_cnpj, ie, logradouro, numero_endereco, complemento, cidade, setor, cep, telefone_fixo, telefone_celular, email, observacoes, cnpj_empresa) VALUES (:data_cadastro, :data_suspenso, :nome, :razao_social, :cpf_cnpj, :ie, :logradouro, :numero_endereco, :complemento, :cidade, :setor, :cep, :telefone_fixo, :telefone_celular, :email, :observacoes, :cnpj_empresa)";
+            $sql = "INSERT INTO tb_cliente (data_cadastro, data_suspenso, nome, razao_social, cpf_cnpj, ie, logradouro, numero_endereco, complemento, cidade, estado, setor, cep, telefone_fixo, telefone_celular, email, observacoes, cnpj_empresa) VALUES (:data_cadastro, :data_suspenso, :nome, :razao_social, :cpf_cnpj, :ie, :logradouro, :numero_endereco, :complemento, :cidade, :estado, :setor, :cep, :telefone_fixo, :telefone_celular, :email, :observacoes, :cnpj_empresa)";
         } else {
-            $sql = "UPDATE tb_cliente SET data_cadastro = :data_cadastro, data_suspenso = :data_suspenso, nome = :nome, razao_social = :razao_social, cpf_cnpj = :cpf_cnpj, ie = :ie, logradouro = :logradouro, numero_endereco = :numero_endereco, complemento = :complemento, cidade = :cidade, setor = :setor, cep = :cep, telefone_fixo = :telefone_fixo, telefone_celular = :telefone_celular, email = :email, observacoes = :observacoes, cnpj_empresa = :cnpj_empresa WHERE id = :id";
+            $sql = "UPDATE tb_cliente SET data_cadastro = :data_cadastro, data_suspenso = :data_suspenso, nome = :nome, razao_social = :razao_social, cpf_cnpj = :cpf_cnpj, ie = :ie, logradouro = :logradouro, numero_endereco = :numero_endereco, complemento = :complemento, cidade = :cidade, estado = :estado, setor = :setor, cep = :cep, telefone_fixo = :telefone_fixo, telefone_celular = :telefone_celular, email = :email, observacoes = :observacoes, cnpj_empresa = :cnpj_empresa WHERE id = :id";
         }
         $db = db_connect();
         $stmt = $db->prepare($sql);
@@ -36,6 +36,7 @@ class ClienteBO{
         $stmt->bindParam(':numero_endereco', $cliente->getNumeroEndereco());
         $stmt->bindParam(':complemento', $cliente->getComplemento());
         $stmt->bindParam(':cidade', $cliente->getCidade());
+        $stmt->bindParam(':estado', $cliente->getEstado());
         $stmt->bindParam(':setor', $cliente->getSetor());
         $stmt->bindParam(':cep', $cliente->getCep());
         $stmt->bindParam(':telefone_fixo', $cliente->getTelefoneFixo());

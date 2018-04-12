@@ -12,6 +12,8 @@ class Cliente {
 	private $complemento;
 	private $numeroEndereco;
 	private $setor;
+    private $cidade;
+    private $estado;
 	private $cep;
 	private $telefoneFixo;
 	private $telefoneCelular;
@@ -191,6 +193,38 @@ class Cliente {
     public function setSetor($setor)
     {
         $this->setor = $setor;
+    }
+    
+    /**
+     * @return mixed
+     */
+    public function getCidade()
+    {
+        return $this->cidade;
+    }
+
+    /**
+     * @param mixed $setor
+     */
+    public function setCidade($cidade)
+    {
+        $this->cidade = $cidade;
+    }
+    
+    /**
+     * @return mixed
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * @param mixed $setor
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
     }
 
     /**
