@@ -1,5 +1,6 @@
 <?php 
 include('header.php');
+include('exibir-erro.php');
 require ('UsuarioBO.php');
 ?>
 <div class="containerprincipal">

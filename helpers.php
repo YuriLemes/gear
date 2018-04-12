@@ -12,9 +12,7 @@
  */
 function db_connect(){
 
-    $PDO = new PDO(sprintf('mysql:dbname=%s;host=%s;charset=utf8', getConfig('db.dbname'), getConfig('db.host')), getConfig('db.user'), getConfig('db.pass'), array(
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    ));
+    $PDO = new PDO(sprintf('mysql:dbname=%s;host=%s;charset=utf8', getConfig('db.dbname'), getConfig('db.host')), getConfig('db.user'), getConfig('db.pass'), array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     return $PDO;
 }
 

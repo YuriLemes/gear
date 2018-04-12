@@ -39,7 +39,7 @@ class UsuarioBO {
             throw new SistemaException("Usuário e/ou senha inválidos");
         $user = $usuarios[0];
         $_SESSION['login']['logado'] = true;
-        if($user->getPerfil() == Perfil::ADMIN){
+        if(Perfil::ADMIN == $user->getPerfil()){
             $_SESSION['login']['admin'] = true;
         }else{
             $_SESSION['login']['admin'] = false;
@@ -56,15 +56,13 @@ class UsuarioBO {
         self::validarDadosObrigatorios($usuario);
         $cnpj = $_SESSION['login']['cnpj_empresa'];
         $sql = null;
-        foreach (findByLogin() as $logins)
-            if ($logins == $usuario->getLogin()) {
-                throw new SistemaException("Loguin já cadastrado!");
-            }
-            else{
-                if(empty($usuario->getId())){
-                    $sql = "INSERT INTO tb_usuario (nome, login, senha, perfil, ativo, cnpj_empresa) VALUES (:nome, :login, :senha, :perfil, :ativo, :cnpj_empresa)";
-                } 
-            }
+        foreach (self::findByLogin() as $logins)
+            if ($logins->getLogin() == $usuario->getLogin()) {
+                throw new SistemaException("Login já cadastrado!");
+            } else if(empty($usuario->getId())){
+                $sql = "INSERT INTO tb_usuario (nome, login, senha, perfil, ativo, cnpj_empresa) VALUES (:nome, :login, :senha, :perfil, :ativo, :cnpj_empresa)";
+            } 
+            
             if(!empty($usuario->getId())){
                 $sql = "UPDATE tb_usuario SET nome = :nome, login = :login, senha = :senha, perfil = :perfil, ativo = :ativo, cnpj_empresa = :cnpj_empresa WHERE id = :id";
             }
@@ -133,6 +131,7 @@ class UsuarioBO {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
     }
+    
     static function findByLogin(){
         $cnpj = $_SESSION['login']['cnpj_empresa'];
         $sql = "SELECT login FROM tb_usuario WHERE cnpj_empresa = :cnpj_empresa";
@@ -140,7 +139,7 @@ class UsuarioBO {
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':cnpj_empresa', $cnpj);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC,'Usuario');
+        return $stmt->fetchAll(PDO::FETCH_CLASS,'Usuario');
     }
 
 

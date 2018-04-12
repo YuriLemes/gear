@@ -23,7 +23,8 @@ try{
     UsuarioBO::save($usuario);
     
 }catch (Exception $exception){
-   
     $_SESSION['excecao']['mensagem'] = $exception->getMessage();
+    header('Location: usuario-form-cadastro');
+    exit;
 }
 header('Location: usuario-lista');
