@@ -17,7 +17,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($usuarios as $usuario):?>
+                    <?php foreach ($usuarios as $usuario):?>
                     <tr>
                         <td><?=$usuario->getNome()?></td>
                         <td><?=$usuario->getLogin()?></td>

@@ -10,8 +10,10 @@ $login = $_POST['clogin'];
 $senha = $_POST['csenha'];
 $ativo = $_POST['cativo'];
 $perfil = $_POST['cperfil'];
+$id = $_POST['id'];
 
 $usuario = new Usuario();
+$usuario->setId($id);
 $usuario->setNome($nome);
 $usuario->setLogin($login);
 $usuario->setSenha($senha);
@@ -23,6 +25,7 @@ try{
     UsuarioBO::save($usuario);
     
 }catch (Exception $exception){
+	echo $exception->getMessage();
    
     $_SESSION['excecao']['mensagem'] = $exception->getMessage();
 }

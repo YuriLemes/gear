@@ -12,14 +12,14 @@ require ('UsuarioBO.php');
 			<fieldset>
 				<div class="form-group">
 					<label for="id">ID:</label >
-					<input   required maxlength="5" type="text" class="form-control" name="id" id="id" disabled >
+					<input   required maxlength="5" type="text" class="form-control" name="id" id="id-usuario" readonly="readonly" >
 				</div>
 			</div>
 
 			<div class="containerc" style="padding-left: 69px;">
 				<div class="form-group">
 					<label for="cnpj">CNPJ Empresa: </label>
-					<input type="text" name="ccnpj" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>" readyonly="readyonly" placeholder="00.000.000/0000-00" class="form-control" maxlength="14" disabled />
+					<input type="text" name="ccnpj" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>" readonly="readonly" placeholder="00.000.000/0000-00" class="form-control" maxlength="14" />
 				</div>
 			</fieldset>
 		</div>
