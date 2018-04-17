@@ -2,6 +2,8 @@
 include('header-form.php');
 include('exibir-erro.php');
 require ('UsuarioBO.php');
+$cnpj_empresa = $_SESSION['login']['cnpj_empresa'];
+$login = $_SESSION['login']['usuario'];
 ?>
 
 <div class="containerprincipal">
@@ -21,7 +23,7 @@ require ('UsuarioBO.php');
 			<div class="containerc">
 				<div class="form-group">
 					<label for="cnpj">CNPJ Empresa: </label>
-					<input type="text" name="ccnpj" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>" readonly="readonly" placeholder="00.000.000/0000-00" class="form-control" maxlength="14" />
+					<input type="text" name="ccnpj" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>" <?php if($cnpj_empresa != '00000000000000' && $login != 'gear') echo 'disabled'?> placeholder="00.000.000/0000-00" class="form-control" maxlength="14" />
 				</div>
 			</fieldset>
 		</div>

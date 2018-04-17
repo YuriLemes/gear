@@ -1,4 +1,4 @@
 <?php
 session_start();
 $_SESSION['login']['logado'] = false;
-header('Location:/gear');
+header('Location:/');

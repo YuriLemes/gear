@@ -48,15 +48,45 @@ class UsuarioBO {
         $_SESSION['login']['cnpj_empresa'] = $user->getCnpjEmpresa();
     }
     
+    public static function cadastroInicial(Usuario $usuario){
+        self::validarDadosObrigatorios($usuario);
+        
+        $cnpj = $usuario->getCnpjEmpresa();
+        
+        $sql = "INSERT INTO tb_usuario (nome, login, senha, perfil, ativo, cnpj_empresa) VALUES (:nome, :login, :senha, :perfil, :ativo, :cnpj_empresa)";
+
+        $db = db_connect();
+        $stmt = $db->prepare($sql);
+        $nome = $usuario->getNome(); 
+        $login = $usuario->getLogin(); 
+        $senha = $usuario->getSenha();
+        $perfil = $usuario->getPerfil(); 
+        $ativo = $usuario->getAtivo();
+
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':login', $login);
+        $stmt->bindParam(':senha',$senha);
+        $stmt->bindParam(':perfil',$perfil);
+        $stmt->bindParam(':ativo', $ativo);
+        $stmt->bindParam(':cnpj_empresa',$cnpj);
+        if(!empty($usuario->getId())){
+            $id = $usuario->getId();
+            $stmt->bindParam(':id', $id);
+        }
+
+        return $stmt->execute();
+    }
     /**
      * Salva um usuário no banco de dados
      * @param Usuario $usuario
      */
     public static function save(Usuario $usuario) {
         self::validarDadosObrigatorios($usuario);
+        
         $cnpj = $_SESSION['login']['cnpj_empresa'];
+        
         $sql = null;
-        foreach (self::findByLogin() as $logins)
+        foreach (self::findByLogin($cnpj) as $logins){
             if ($logins->getLogin() == $usuario->getLogin()&&(empty($usuario->getId()))) {
                 throw new SistemaException("Login já cadastrado!");
             } else if(empty($usuario->getId())){
@@ -66,6 +96,8 @@ class UsuarioBO {
             if(!empty($usuario->getId())){
                 $sql = "UPDATE tb_usuario SET nome = :nome, login = :login, senha = :senha, perfil = :perfil, ativo = :ativo, cnpj_empresa = :cnpj_empresa WHERE id = :id";
             }
+        }
+            echo $sql;
             $db = db_connect();
             $stmt = $db->prepare($sql);
             $nome = $usuario->getNome(); 
@@ -132,14 +164,16 @@ class UsuarioBO {
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
     }
     
-    static function findByLogin(){
-        $cnpj = $_SESSION['login']['cnpj_empresa'];
-        $sql = "SELECT login FROM tb_usuario WHERE cnpj_empresa = :cnpj_empresa";
+    static function findByLogin($cnpj){
+        if($_SESSION['login']['usuario'] == 'gear'){
+            return array();
+        }
+        $sqt = "SELECT login FROM tb_usuario WHERE cnpj_empresa = :cnpj_empresa";
         $DB = db_connect();
-        $stmt = $DB->prepare($sql);
+        $stmt = $DB->prepare($sqt);
         $stmt->bindParam(':cnpj_empresa', $cnpj);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_CLASS,'Usuario');
+        return $stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
     }
 
 
@@ -166,6 +200,7 @@ class UsuarioBO {
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':perfil', $perfil);
         $stmt->bindParam(':cnpj_empresa', $cnpj);
+         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
     }
     static function findByAtivo($ativo = true){
@@ -175,6 +210,7 @@ class UsuarioBO {
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':ativo', $ativo);
         $stmt->bindParam(':cnpj_empresa', $cnpj);
+         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Usuario');
     }
     /**
