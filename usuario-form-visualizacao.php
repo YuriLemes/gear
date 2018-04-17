@@ -79,11 +79,6 @@ $usuario= UsuarioBO::findById($id);
 						<i class="fas fa-edit"></i>Alterar
 					</span>
 				</button>
-				<button type="button" class="btn btn-success" id="btn-salvar" disabled>
-					<span>
-						<i class="far fa-save"></i> Salvar
-					</span>
-				</button>
 				<button  class="btn btn-danger" id="btn-cancelar" type="button"
 				onclick="window.location.replace('usuario-lista')">
 				<span>

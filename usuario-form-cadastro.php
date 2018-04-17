@@ -92,11 +92,6 @@ require ('UsuarioBO.php');
 				<fieldset>
 					<div class="containerb centralizar">
 						<fieldset>
-							<button type="button" class="btn btn-primary" id="btn-alterar" disabled >
-								<span>
-									<i class="fas fa-edit"></i> Alterar
-								</span>
-							</button>
 							<button type="submit" class="btn btn-success" id="btn-salvar">
 								<span>
 									<i class="far fa-save"></i> Salvar
