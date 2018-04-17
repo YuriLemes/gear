@@ -44,7 +44,7 @@ if(!estaLogado()){
                                 Cadastros
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownCadastro">
-                                <a class="dropdown-item disabled" href="#">Clientes</a>
+                                <a class="dropdown-item " href="cliente-lista">Clientes</a>
                                 <a class="dropdown-item disabled" href="#">Fornecedores</a>
                                 <a class="dropdown-item disabled" href="#">Produtos</a>
                                 <a class="dropdown-item disabled" href="#">Categoria Produtos</a>
