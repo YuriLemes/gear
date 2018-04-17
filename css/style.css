@@ -2,11 +2,15 @@
 
 /* ESTILO GERAL*/
 
-
 /*  ESTILO LOGIN */
 body{
+    
     text-align: center;
     background-color: #fdfdfd;
+   
+}
+#fundo{
+    background-image:url(../fundo.png);
 }
 
 .login-principal {
@@ -152,10 +156,15 @@ h5{
     margin: 0px;
     min-width: 700px;
 }
-.containerc{
+.containeri{
     padding-top: 5px;
     max-width: 350px;
     padding-left: 40px;
+}
+.containerc{
+    padding-top: 5px;
+    max-width: 350px;
+    padding-left: 69px;
 }
 
 .containerprincipal{
@@ -165,17 +174,21 @@ h5{
     margin: auto;
     width: 700px;
     height: 400px;
-    box-shadow: 0.3em 0.3em 0.3em 0.3em #808080;
+    /*box-shadow: 0.3em 0.3em 0.3em 0.3em #808080;*/
     border-radius: 8px;
     margin-top: 40px;
 
+}
+#id-usuario{
+    width: 204px;
+    margin-left: 12px;
 }
 #login{
     width: 204px;
     margin-left: 12px;
 }
 #senha-usuario{
-    margin-left: 12px;
+    margin-left: 14px;
     margin-right: 15px;
     width: 188px;
 }
@@ -186,7 +199,6 @@ h5{
 }
 #cnpj{
     width: 204px;
-    margin-bottom: 5px;
     margin-left: 13px;
 }
 
