@@ -18,7 +18,7 @@
             <tbody>
                 <?php foreach ($servicos as $servico):?>
                     <tr>
-                        <td><?=$servico->getDescricaoResumida()?></td>
+                        <td><?=strtoupper($servico->getDescricaoResumida())?></td>
                         <td>
                             <form action="#" method="post">
                                 <button class="tooltip btn btn-info" type="submit" formaction="servico-form-visualizacao.php?id=<?=$servico->getId()?>">

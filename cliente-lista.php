@@ -20,22 +20,22 @@
             <tbody>
                     <?php foreach ($clientes as $cliente):?>
                     <tr>
-                        <td><?=$cliente->getNome()?></td>
+                        <td><?=strtoupper($cliente->getNome())?></td>
                         <td><?php if(strlen($cliente->cpf_cnpj) == 14): echo Mask("##.###.###/####-##", $cliente->cpf_cnpj); else: echo Mask("###.###.###-##", $cliente->cpf_cnpj); endif;?></td>
-                        <td><?=date_format(date_create($cliente->data_cadastro), 'd-m-Y')?></td>
+                        <td><?=date_format(date_create($cliente->data_cadastro), 'd/m/Y')?></td>
                         <td>
                             <form action="#" method="post">
-                                <button class="tooltip btn btn-info" type="submit" formaction="cliente-form-visualizacao.php?id=<?=$cliente->getId()?>">
+                                <button class="tooltip btn btn-info" type="submit" disabled formaction="cliente-form-visualizacao.php?id=<?=$cliente->getId()?>">
                                     <i class="fas fa-eye"></i>
-                                    <span class="tooltiptext">Visualizar</span>
+                                    <span class="tooltiptext">Em Desenvolvimento</span>
                                 </button>
-                                <button  class="tooltip btn btn-primary
+                                <button  disabled class="tooltip btn btn-primary
                                     <?php
                                         if(!adminLogado()):
                                             echo "disabled" ?>" <?php echo "disabled";
                                         endif;?> type="submit" formaction="cliente-form-alteracao.php?id=<?=$cliente->getId()?>">
                                     <i class="fas fa-pencil-alt"></i>
-                                    <span class="tooltiptext">Alterar</span>
+                                    <span class="tooltiptext">Em Desenvolvimento</span>
                                 </button>
                                 <button class="tooltip btn btn-danger
                                     <?php
@@ -48,7 +48,7 @@
                                         onclick="return confirm('Confirma a suspensão deste cliente?')"
                                         formaction="cliente-acao-suspender.php?id=<?=$cliente->getId()?>">
                                     <i class="fas fa-minus-square"></i>
-                                    <span class="tooltiptext">Suspender</span>
+                                    <span class="tooltiptext">Em Desenvolvimento</span>
                                 </button>
                             </form>
                         </td>
@@ -58,13 +58,15 @@
         </table>
     </div>
 </div>
-<div class="container">
-    <input type="button"  value="Novo" onclick="window.location.href='cliente-form-cadastro.php';" class="btn btn-success 
+<div class="container ">
+    <button disabled type="button" onclick="window.location.href='cliente-form-cadastro.php';" class="btn btn-success tooltip
     <?php 
         if(!adminLogado()):
             echo"disabled";?> " <?php echo"disabled";
         else:
             ?> " 
-        <?php endif;?> />
+        <?php endif;?> >Novo
+        <span class="tooltiptext">Em Desenvolvimento</span>
+    </button>
 </div> 
 <?php include('footer.php')?>

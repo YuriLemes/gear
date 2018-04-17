@@ -2,7 +2,7 @@
 session_start();
 require_once('helpers.php');
 if(!estaLogado()){
-    header('Location: index.php');
+    header('Location: /');
 }
 function Mask($mask,$str){
 
