@@ -74,21 +74,24 @@ class ClienteBO{
         $cnpj = $_SESSION['login']['cnpj_empresa'];
         if(empty($id))
             throw new SistemaException("Para ser suspenso, o cliente deve possuir ID!");
-        $sql = "UPDATE tb_cliente SET ativo = false WHERE id = :id AND cnpj_empresa = :cnpj_empresa";
+        $sql = "UPDATE tb_cliente SET data_suspenso = :data_atual WHERE id = :id AND cnpj_empresa = :cnpj_empresa";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':data_atual', date('Y-m-d'));
         $stmt->bindParam(':cnpj_empresa', $cnpj);
+        
         $stmt->execute();
     }
     /**
-     * Retorna a lista com todos os Usuarios ativos na base de dados, para a empresa atual;
+     * Retorna a lista com todos os Clientes ativos na base de dados, para a empresa atual;
      * @return array
      */
     static function findAllActive(){
         $cnpj = $_SESSION['login']['cnpj_empresa'];
+        $s = NULL;
         /*id, nome, login, senha, perfil, ativo, cnpj_empresa*/
-        $sql = "SELECT * FROM tb_cliente WHERE cnpj_empresa = :cnpj_empresa AND ativo = true ORDER BY nome";
+        $sql = "SELECT * FROM tb_cliente WHERE cnpj_empresa = :cnpj_empresa ORDER BY nome";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':cnpj_empresa', $cnpj);
@@ -102,7 +105,7 @@ class ClienteBO{
     static function findAllSuspense(){
         $cnpj = $_SESSION['login']['cnpj_empresa'];
         /*id, nome, login, senha, perfil, ativo, cnpj_empresa*/
-        $sql = "SELECT * FROM tb_cliente WHERE cnpj_empresa = :cnpj_empresa AND ativo = false ORDER BY login";
+        $sql = "SELECT * FROM tb_cliente WHERE cnpj_empresa = :cnpj_empresa ORDER BY nome";
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':cnpj_empresa', $cnpj);

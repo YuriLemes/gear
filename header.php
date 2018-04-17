@@ -4,6 +4,17 @@ require_once('helpers.php');
 if(!estaLogado()){
     header('Location: index.php');
 }
+function Mask($mask,$str){
+
+    $str = str_replace(" ","",$str);
+
+    for($i=0;$i<strlen($str);$i++){
+        $mask[strpos($mask,"#")] = $str[$i];
+    }
+
+    return $mask;
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +54,7 @@ if(!estaLogado()){
                                 Cadastros
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownCadastro">
-                                <a class="dropdown-item disabled" href="#">Clientes</a>
+                                <a class="dropdown-item" href="cliente-lista">Clientes</a>
                                 <a class="dropdown-item disabled" href="#">Fornecedores</a>
                                 <a class="dropdown-item disabled" href="#">Produtos</a>
                                 <a class="dropdown-item disabled" href="#">Categoria Produtos</a>

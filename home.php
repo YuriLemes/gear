@@ -9,7 +9,7 @@
                 </div>
                 <label>Iniciar Venda / Ordem de Serviço</label>
             </button>
-            <button href="#" class="btn btn-home-central disabled" type="submit" disabled formaction="cliente-lista.php">
+            <button href="#" class="btn btn-home-central" type="submit" formaction="cliente-lista">
                 <label class="btn-home-titulo">Clientes</label>
                 <div>
                     <i class="fas fa-users icone-home""></i>
