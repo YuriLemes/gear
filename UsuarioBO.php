@@ -57,7 +57,7 @@ class UsuarioBO {
         $cnpj = $_SESSION['login']['cnpj_empresa'];
         $sql = null;
         foreach (self::findByLogin() as $logins)
-            if ($logins->getLogin() == $usuario->getLogin()) {
+            if ($logins->getLogin() == $usuario->getLogin()&&(empty($usuario->getId()))) {
                 throw new SistemaException("Login já cadastrado!");
             } else if(empty($usuario->getId())){
                 $sql = "INSERT INTO tb_usuario (nome, login, senha, perfil, ativo, cnpj_empresa) VALUES (:nome, :login, :senha, :perfil, :ativo, :cnpj_empresa)";

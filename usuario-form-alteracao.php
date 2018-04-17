@@ -1,5 +1,5 @@
 <?php 
-include('header.php');
+include('header-form.php');
 require ('UsuarioBO.php');
 $id = $_GET['id'];
 $usuario= UsuarioBO::findById($id);
@@ -12,15 +12,15 @@ $usuario= UsuarioBO::findById($id);
 	
 	<form method="post" class="form-inline" role="form" action="usuario-acao-alterar.php" id="form-usuario">		
 
-		<div class="containerc">
+		<div class="containeri">
 			<fieldset>
 				<div class="form-group">
 					<label for="id">ID:</label >
-					<input   required maxlength="5" type="text" class="form-control" name="id" id="id-usuario" readonly="readonly" value="<?= $usuario->getID()?>">
+					<input maxlength="5" type="text" class="form-control" name="id" id="id-usuario" readonly="readonly" value="<?= $usuario->getID()?>">
 				</div>
 			</div>
 
-			<div class="containerc" style="padding-left: 69px;">
+			<div class="containerc">
 				<div class="form-group">
 					<label for="cnpj">CNPJ Empresa: </label>
 					<input type="text" name="ccnpj" id="cnpj" value="<?=$_SESSION['login']['cnpj_empresa']?>" readonly="readonly" placeholder="00.000.000/0000-00" class="form-control" maxlength="14" />
@@ -64,14 +64,14 @@ $usuario= UsuarioBO::findById($id);
 		<div class="containera">
 			<fieldset>
 				<div class="form-group">
-					<label for="senha" style="margin-left: 37px;">Senha:</label>
+					<label for="senha-usuario" style="margin-left: 37px;">Senha:</label>
 					<input type="password" name="csenha" id="senha-usuario" class="form-control" maxlength="5" value="<?= 
 					$usuario->getSenha()?>"  />
 				</div>
 
 				<div class="form-group">
 					<label for="ativo" style="margin-left: 35px;">Ativo:</label>
-					<input type="checkbox" name="cativo" id="ativo" class="form-control" checked="checked" disabled value="<?= $usuario->getAtivo()?>"/>
+					<input type="checkbox" name="cativo" id="ativo" class="form-control" checked="checked" readonly value="<?= $usuario->getAtivo()?>"/>
 					<span class="error">
 						*
 					</span>
