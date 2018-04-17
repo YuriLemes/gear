@@ -2,11 +2,15 @@
 
 /* ESTILO GERAL*/
 
-
 /*  ESTILO LOGIN */
 body{
+    
     text-align: center;
     background-color: #fdfdfd;
+   
+}
+#fundo{
+    background-image:url(../fundo.png);
 }
 
 .login-principal {
@@ -69,7 +73,7 @@ input[type=password] {
 /* ESTILO HOME*/
 
 .menu{
-
+    
     float: right;   
     width: 165px; 
     background-color: #5F9EA0;
@@ -112,187 +116,187 @@ input[type=password] {
 .icone-home {
     font-size: 6em;
     color: #0D7628;
-    }.navbar navbar-expand-lg navbar-light bg-light{
-        padding-top: 8px;
-        padding-bottom: 8px;
-        padding-right: 16px;
-        padding-right: 16px;
-        width: 1093px;
-        height: 38px;
-    }
-    /*ESTILO USUÁRIO*/
-    h5{
-        background-color: #0d7628;
-        color: white; 
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-        height: 35px;
-        text-align: center;
-    }
-    #form-usuario{
-        height: 300px;
-    }
-    .form-group label{
-        float: left;
-        text-align: center;
-        width: 50px;
-    }
-    .containern{
-        padding-left: 40px;
-        padding-bottom: 0px;
-    }
-    .containera{
-        min-height: 106px;
-        max-width: 350px;
-        padding-left: 40px;
+}.navbar navbar-expand-lg navbar-light bg-light{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 16px;
+    padding-right: 16px;
+    width: 1093px;
+    height: 38px;
+}
+/*ESTILO USUÁRIO*/
+h5{
+    background-color: #0d7628;
+    color: white; 
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 35px;
+    text-align: center;
+}
+#form-usuario{
+    height: 300px;
+}
+.form-group label{
+    float: left;
+    text-align: center;
+    width: 50px;
+}
+.containern{
+    padding-left: 40px;
+    padding-bottom: 0px;
+}
+.containera{
+    min-height: 106px;
+    max-width: 350px;
+    padding-left: 40px;
 
-    }
-    .containerb{
-        padding-left: 40px;
-        margin: 0px;
-        min-width: 700px;
-    }
-    .containerc{
-        padding-top: 5px;
-        max-width: 350px;
-        padding-left: 40px;
-    }
+}
+.containerb{
+    padding-left: 40px;
+    margin: 0px;
+    min-width: 700px;
+}
+.containeri{
+    padding-top: 5px;
+    max-width: 350px;
+    padding-left: 40px;
+}
+.containerc{
+    padding-top: 5px;
+    max-width: 350px;
+    padding-left: 69px;
+}
 
-    .containerprincipal{
-        padding-top: 0px;
-        background: white;
-        background-color: #fdfdfd;
-        margin: auto;
-        width: 700px;
-        height: 400px;
-        box-shadow: 0.3em 0.3em 0.3em 0.3em #808080;
-        border-radius: 8px;
-        margin-top: 40px;
+.containerprincipal{
+    padding-top: 0px;
+    background: white;
+    background-color: #fdfdfd;
+    margin: auto;
+    width: 700px;
+    height: 400px;
+    /*box-shadow: 0.3em 0.3em 0.3em 0.3em #808080;*/
+    border-radius: 8px;
+    margin-top: 40px;
 
-    }
-    #login{
-        width: 204px;
-        margin-left: 12px;
-    }
-    #senha-usuario{
-        margin-left: 12px;
-        margin-right: 15px;
-        width: 188px;
-    }
+}
+#id-usuario{
+    width: 204px;
+    margin-left: 12px;
+}
+#login{
+    width: 204px;
+    margin-left: 12px;
+}
+#senha-usuario{
+    margin-left: 14px;
+    margin-right: 15px;
+    width: 188px;
+}
 
-    #nome{
-        margin-left: 12px;
-        width: 539px;
-    }
-    #cnpj{
-        width: 204px;
-        margin-bottom: 5px;
-        margin-left: 13px;
-    }
+#nome{
+    margin-left: 12px;
+    width: 539px;
+}
+#cnpj{
+    width: 204px;
+    margin-left: 13px;
+}
 
-    #perfil{
-        width: 204px;
-        margin-left: 12px;
-    }
-    #ativo{
-        margin-left: 18px;
-    }
-    #id-usuario{
-        width: 204px;
-        margin-left: 12px;
-    }
-    .btn-warning{
-        color: white;
-    }
-    .btn-warning:hover {
-        color: white;
-    }
-    .btn-warning:focus{
-        color: white;
-    }
-    .centralizar {
-        text-align: center; 
-    }
-    .form-group{
-        padding-bottom: 15px;
-    }
-    p{
-        padding-left: 35px;
+#perfil{
+    width: 204px;
+    margin-left: 12px;
+}
+#ativo{
+    margin-left: 18px;
+}
+#id{
+    margin-left: 12px;
+}
+.btn-warning{
+    color: white;
+}
+.btn-warning:hover {
+    color: white;
+}
+.btn-warning:focus{
+    color: white;
+}
+.centralizar {
+    text-align: center; 
+}
+.form-group{
+    padding-bottom: 15px;
+}
+p{
+    padding-left: 35px;
+   
+}
+span.error{
+    text-align: : left;
+    font-size: 12px;
+    color: red;
+}
+/*FIM ESTILO USUÁRIO*/
 
-    }
-    span.error{
-        text-align: : left;
-        font-size: 12px;
-        color: red;
-    }
-    
-    
-    /*FIM ESTILO USUÁRIO* tbody{
-        display: block;
-        float: left;
-        overflow: scroll;
-        height: 300px;
-    }/
+/*INÍCIO ESTILO SERVIÇO */
 
-    /*INÍCIO ESTILO SERVIÇO */
+#id{
+    margin-left: 30px;
+}
+.containerg{
+    width: 650px;
+    margin-left: 30px;
+    padding-left: 40px;
+    padding-bottom: 0px;
+}
+#servico{
+    width: 400px;
+    margin-left: 30px;
+    margin-right: 5px;
 
-    #id{
-        margin-left: 30px;
-    }
-    .containerg{
-        width: 650px;
-        margin-left: 30px;
-        padding-left: 40px;
-        padding-bottom: 0px;
-    }
-    #servico{
-        width: 400px;
-        margin-left: 30px;
-        margin-right: 5px;
+}
 
-    }
-
-    #cdesc{
-        margin-left: 30px;
-    }
+#cdesc{
+    margin-left: 30px;
+}
 
 
-    /*FIM ESTILO SERVIÇO */
+/*FIM ESTILO SERVIÇO */
 
-    .tooltip {
-        position: relative;
-        display: inline-block;
-        opacity: 1;
-    }
+.tooltip {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+}
 
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 120px;
-        background-color: #555;
-        color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
-        position: absolute;
-        z-index: 1;
-        bottom: 125%;
-        left: 50%;
-        margin-left: -60px;
-        transition: opacity 0.3s;
-    }
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    transition: opacity 0.3s;
+}
 
-    .tooltip .tooltiptext::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: #555 transparent transparent transparent;
-    }
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
 
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-        opacity: 1;
-    }
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
