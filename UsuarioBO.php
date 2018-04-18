@@ -28,7 +28,7 @@ class UsuarioBO {
         }
         if(empty($usuario->getLogin()))
             throw new SistemaException("Usuário não informado");
-        $sql = sprintf("SELECT * FROM tb_usuario WHERE login = :login AND senha = :senha");
+        $sql = sprintf("SELECT * FROM tb_usuario WHERE login = :login AND senha = :senha AND ativo = true");
         $DB = db_connect();
         $stmt = $DB->prepare($sql);
         $stmt->bindParam(':login', $usuario->getLogin());
