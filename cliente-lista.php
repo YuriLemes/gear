@@ -25,9 +25,9 @@
                         <td><?=date_format(date_create($cliente->data_cadastro), 'd/m/Y')?></td>
                         <td>
                             <form action="#" method="post">
-                                <button class="tooltip btn btn-info" type="submit" disabled formaction="cliente-form-visualizacao.php?id=<?=$cliente->getId()?>">
+                                <button class="tooltip btn btn-info" type="submit" formaction="cliente-form-visualizacao.php?id=<?=$cliente->getId()?>">
                                     <i class="fas fa-eye"></i>
-                                    <span class="tooltiptext">Em Desenvolvimento</span>
+                                   
                                 </button>
                                 <button  disabled class="tooltip btn btn-primary
                                     <?php
