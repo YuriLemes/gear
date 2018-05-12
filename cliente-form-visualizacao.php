@@ -4,11 +4,11 @@ require ('ClienteBO.php');
 $id=$_GET['id'];
 $servico= ClienteBO::findById($id);
 ?>
-<div class="containerprincipal">
+<div class="containercliente ">
 	<h5>Visualização de Clientes</h5>
 		<form method="post" class="form-inline" role="form" action="#" id="form-cliente">	
 		
-		<div class="#">
+		<div class="containerg">
 		<div class="form-group">
 				<label for="id-cliente">ID: </label>
 				<input type="text" name="cid" id="id-cliente" maxlength="5" readonly="readonly"disabled value="<?= $servico->getId()?>" >
@@ -16,12 +16,12 @@ $servico= ClienteBO::findById($id);
 
 			<div class="form-group">
 				<label for="dtCadastro">Data Cadastro: </label>
-				<input type="date" name="cdtCadatro" id="dtCadastro" disabled value="<?$cliente->getDataCadastro()?>" >
+				<input class="clientecentralizar" type="date" name="cdtCadatro" id="dtCadastro" disabled value="<?$cliente->getDataCadastro()?>" >
 			</div>
 
 			<div class="form-group">
 				<label for="dtSuspenso">Data Supenso: </label>
-				<input type="date" name="cdtSuspenso" id="dtSuspenso"disabled value >
+				<input class="clientecentralizar" type="date" name="cdtSuspenso" id="dtSuspenso"disabled value >
 			</div>
 			<div class="form-group">
 				<label for="nome">Nome: </label>
@@ -40,62 +40,62 @@ $servico= ClienteBO::findById($id);
 
 			<div class="form-group">
 				<label for="ie">IE: </label>
-				<input type="text" name="cie" id="ie" maxlength="30">
+				<input type="text" name="cie" id="ie" maxlength="30" disabled value>
 			</div>
 
 			<div class="form-group">
 				<label for="telefone">Telefone: </label>
-				<input type="text" name="ctelefone" id="telefone" maxlength="11">
+				<input type="text" name="ctelefone" id="telefone" maxlength="11" disabled value>
 			</div>
 
 			<div class="form-group">
 				<label for="celular">Celular: </label>
-				<input type="text" name="ccelular" id="celular" maxlength="11">
+				<input type="text" name="ccelular" id="celular" maxlength="11" disabled value>
 			</div>
 			<div class="form-group">
 				<label for="email">E-mail: </label>
-				<input type="email" name="cemail" id="email" maxlength="11">
+				<input class="clientecentralizar" type="email" name="cemail" id="email" maxlength="11" disabled value>
 			</div>
 			<div class="form-group">
 				<label for="observacao">Observação: </label>
-				<textarea name="cobservacao" id="observacao" maxlength="250"></textarea>
+				<textarea class="clientecentralizar" name="cobservacao" id="observacao" maxlength="250" disabled value></textarea>
 			</div>
 			<div class="form-group">
 				<label for="logadouro">Logadouro: </label>
-				<input type="text" name="clogadouro" id="logadouro" maxlength="100">
+				<input type="text" name="clogadouro" id="logadouro" maxlength="100" disabled value>
 			</div>
 			<div class="form-group">
 				<label for="numero">Número: </label>
-				<input type="text" name="cnumero" id="numero" maxlength="5">
+				<input type="text" name="cnumero" id="numero" maxlength="5" disabled value>
 			</div>
 			<div class="form-group">
 				<label for="complemento">Complemento: </label>
-				<input type="text" name="ccomplemento" id="complemento" maxlength="100">
+				<input type="text" name="ccomplemento" id="complemento" maxlength="100" disabled value>
 			</div>
 			<div class="form-group">
 				<label for="cidade">Cidade: </label>
-				<input type="text" name="ccidade" id="cidade" maxlength="9">
+				<input type="text" name="ccidade" id="cidade" maxlength="9" disabled value>
 			</div>
 			<div class="form-group">
 				<label for="cep">CEP: </label>
-				<input type="text" name="ccep" id="cep" maxlength="8">
+				<input type="text" name="ccep" id="cep" maxlength="8" disabled value>
 			</div>
 			<div class="form-group">
 				<label for="estado">Estado: </label>
-				<input type="text" name="cestado">
+				<input type="text" name="cestado" disabled value >
 			</div>
 
 		</div>	
 		
 		<div class="containerb centralizar">
 			<fieldset>
-				<button type="button" class="btn btn-primary" id="btn-salvar">
+				<button type="button" class="btn btn-primary" id="#">
 					<span>
 						<i class="far fa-edit"></i> Alterar
 					</span>
 				</button>
 
-				<button type="button" class="btn btn-danger" id="btn-cancelar" >
+				<button type="button" class="btn btn-danger" id="#" >
 					<span>
 						<i class="fas fa-times"></i> Cancelar
 					</span>
